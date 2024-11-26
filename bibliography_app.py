@@ -26,12 +26,20 @@ st.markdown("""
             font-size: 2vw;
             margin-top: 10px;
         }
+        .gradient-separator {
+            border: 2px solid transparent;
+            background-image: linear-gradient(90deg, #FF5733, #33FF57, #3357FF, #FF33A1, #FF5733);
+            background-size: 400% 100%;
+            animation: gradient 10s ease infinite;
+            height: 2px;
+            margin: 0;
+        }
     </style>
     <h1 class="gradient-text">Daryl's Bibliography</h1>
 """, unsafe_allow_html=True)
 
-# Separator
-st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0;'>", unsafe_allow_html=True)
+# Gradient Separator
+st.markdown("<div class='gradient-separator'></div>", unsafe_allow_html=True)
 
 # Description and Image columns
 desc_col, img_col = st.columns([3, 1])
@@ -58,8 +66,8 @@ with img_col:
         </div>
     """, unsafe_allow_html=True)
 
-# Separator
-st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0;'>", unsafe_allow_html=True)
+# Gradient Separator
+st.markdown("<div class='gradient-separator'></div>", unsafe_allow_html=True)
 
 # Personal Details
 details_col, competencies_col = st.columns(2)
@@ -99,6 +107,8 @@ with competencies_col:
         for competency in competencies:
             st.markdown(f"- {competency}", unsafe_allow_html=True)
 
+# Gradient Separator
+st.markdown("<div class='gradient-separator'></div>", unsafe_allow_html=True)
+
 # Footnote
-st.markdown("<hr style='border: 2px solid #4A 90E2; margin: 0;'>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; font-size: 0.8em;'>This bibliography is a personal project created using Streamlit.</p>", unsafe_allow_html=True)
