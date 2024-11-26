@@ -40,7 +40,7 @@ st.markdown("""
             margin-top: 20px;
         }
     </style>
-    <h1 class="header">Daryl's Bibliography</h1>
+    <h1 class="header">Daryl's Bibliography Page</h1>
 """, unsafe_allow_html=True)
 
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
