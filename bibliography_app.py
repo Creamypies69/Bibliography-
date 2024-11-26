@@ -108,7 +108,7 @@ tabs = st.tabs(tab_names)
 # Dictionary of images for each tab
 image_urls = {
     "SNSU": "https://via.placeholder.com/300?text=SNSU",
-    "KC ASPACIO": "https://via.placeholder.com/300?text=KC+ASPACIO",
+    "KC ASPACIO": "https://via.placeholder.com /300?text=KC+ASPACIO",
     "DREESMNHS": "https://via.placeholder.com/300?text=DREESMNHS",
     "DARYL": "https://via.placeholder.com/300?text=DARYL",
     "SURIGAO CITY": "https://via.placeholder.com/300?text=SURIGAO+CITY"
