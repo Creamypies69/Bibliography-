@@ -25,16 +25,14 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
 
 # Create a column for the profile image and name tag
-col1, col2, col3 = st.columns([1, 1, 2])  # Adjust proportions as needed
+col1, col2 = st.columns([1, 2])  # Adjust proportions as needed
 
 with col1:
     st.image(profile_image_url, width=200)  # Resize image
-
-with col2:
     st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)
 
-# Description in the third column
-with col3:
+# Description in the second column
+with col2:
     description = (
         "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
         "He graduated from DREESMNHS and lives in Surigao City. An introverted individual, he dreams of building a network "
@@ -81,16 +79,18 @@ tabs = st.tabs(tab_names)
 images = {
     "SNSU": ["https://via.placeholder.com/300?text=SNSU+Image+1", "https://via.placeholder.com/300?text=SNSU+Image+2", "https://via.placeholder.com/300?text=SNSU+Image+3"],
     "KC ASPACIO": ["https://via.placeholder.com/300?text=KC+ASPACIO+Image+1", "https://via.placeholder.com/300?text=KC+ASPACIO+Image+2"],
-    "DREESMNHS": ["https://via.placeholder.com/300?text=DREESMNHS+Image+1", "https://via.placeholder.com/300?text=DREESMNHS+Image+2", "https://via.placeholder.com/300?text=DREESMNHS+Image+3"],
+    "DREESMNHS": ["https://via.placeholder.com/300?text=DREESMNHS+Image+1", "https://via.placeholder.com/300?text=DREES MNHS+Image+2", "https://via.placeholder.com/300?text=DREESMNHS+Image+3"],
     "DARYL": ["https://via.placeholder.com/300?text=DARYL+Image+1", "https://via.placeholder.com/300?text=DARYL+Image+2"],
     "SURIGAO CITY": ["https://via.placeholder.com/300?text=SURIGAO+CITY+Image+1", "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+2", "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+3"]
 }
 
-# Display images in tabs
+# Display images in tabs with a grid layout
 for i, tab in enumerate(tabs):
     with tab:
-        for img_url in images[tab_names[i]]:
-            st.image(img_url, caption=f"{tab_names[i]} Image", use_column_width=True)
+        cols = st.columns(2)  # Create two columns for the grid
+        for j, img_url in enumerate(images[tab_names[i]]):
+            with cols[j % 2]:  # Alternate between the two columns
+                st.image(img_url, caption=f"{tab_names[i]} Image", use_column_width=True)
 
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
