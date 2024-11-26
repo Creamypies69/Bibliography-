@@ -12,6 +12,7 @@ st.markdown(
         background-size: cover; /* Cover the area */
         background-attachment: fixed; /* Fixed during scroll */
         background-position: center; /* Center the image */
+        opacity: 0.2; /* Low opacity for the background */
     }}
     .sidebar .sidebar-content {{
         background: rgba(255, 255, 255, 0.8); /* Semi-transparent sidebar */
@@ -19,11 +20,14 @@ st.markdown(
     h1 {{
         color: #f63366;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        text-align: center; /* Center align title */
+        line-height: 1.5; /* Two line title */
     }}
     h2, h3 {{
         color: #f63366;
         font-size: 24px; /* Consistent font size */
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        text-align: center; /* Center align subtitles */
     }}
     .stButton > button {{
         background-color: #f63366;
@@ -52,8 +56,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Title
-st.markdown('<h1 style="text-align: center;">Daryl\'s Bibliography</h1>', unsafe_allow_html=True)
+# Title with two lines
+st.markdown('<h1>Daryl\'s<br>Bibliography</h1>', unsafe_allow_html=True)
 
 # Image display
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg" 
@@ -70,15 +74,17 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Personal details section
+# Personal details section as a list
 st.markdown("<h3>Personal Details</h3>", unsafe_allow_html=True)
 personal_details = (
     "<div class='shadow'>"
-    "<p><strong>Age:</strong> 18</p>"
-    "<p><strong>Education:</strong> Bachelor of Science in Computer Engineering (BSCpE)</p>"
-    "<p><strong>University:</strong> Surigao del Norte State University (SNSU)</p>"
-    "<p><strong>High School:</strong> Don Ruben Edera Ecleo Sr. Memorial National High School (DREESMNHS)</p>"
-    "<p><strong>Location:</strong> Barangay Taft, Surigao City, Surigao del Norte, Philippines</p>"
+    "<ul>"
+    "<li><strong>Age:</strong> 18</li>"
+    "<li><strong>Education:</strong> Bachelor of Science in Computer Engineering (BSCpE)</li>"
+    "<li><strong>University:</strong> Surigao del Norte State University (SNSU)</li>"
+    "<li><strong>High School:</strong> Don Ruben Edera Ecleo Sr. Memorial National High School (DREESMNHS)</li>"
+    "<li><strong>Location:</strong> Barangay Taft, Surigao City, Surigao del Norte, Philippines</li>"
+    "</ul>"
     "</div>"
 )
 
