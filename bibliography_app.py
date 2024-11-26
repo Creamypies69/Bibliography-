@@ -7,12 +7,8 @@ st.markdown("""
     </h1>
 """, unsafe_allow_html=True)
 
-# Separator behind everything
-st.markdown("""
-    <div style='position: relative; z-index: -1;'>
-        <hr style='border: 2px solid #5D3FD3; margin: 0;'>
-    </div>
-""", unsafe_allow_html=True)
+# Separator
+st.markdown("<hr style='border: 2px solid #5D3FD3; margin: 0;'>", unsafe_allow_html=True)
 
 # Image
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
