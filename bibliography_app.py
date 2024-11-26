@@ -21,7 +21,7 @@ with desc_col:
         "of autonomous computers. In his free time, he enjoys reading and casual gaming. He has been in a loving relationship "
         "with his girlfriend, KC Aspacio, for three years."
     )
-    st.markdown(f"<p style='font-size: 1.1em;'>{description}</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='font-size: 1.5em; margin: 20px 0;'>{description}</p>", unsafe_allow_html=True)
 
 # Right column for the image
 with img_col:
@@ -56,9 +56,9 @@ with col1:
             "Weight": "56 kg"
         }
 
-        st.markdown("<h3>Personal Details</h3>")
-        for key, value in details.items():
-            st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+        with st.expander("Personal Details", expanded=True):
+            for key, value in details.items():
+                st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
     # Competencies
     with competencies_col:
@@ -73,10 +73,10 @@ with col1:
             "Fast learner."
         ]
 
-        st.markdown("<h3>Competencies</h3>")
-        st.markdown("Daryl has developed a range of competencies, including:")
-        for item in competencies:
-            st.markdown(f"- {item}")
+        with st.expander("Competencies", expanded=False):
+            st.markdown("Daryl has developed a range of competencies, including:")
+            for item in competencies:
+                st.markdown(f"- {item}")
 
 # Footer with new styling
 st.markdown("<div style='text-align: center; margin-top: 20px; font-size: 0.9em; color: #888;'><em>This is a personal project! Submitted for <a href='#' style='color: #4A90E2;'>Programming Logic and Design Course</a>.</em></div>", unsafe_allow_html=True)
