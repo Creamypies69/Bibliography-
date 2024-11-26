@@ -1,17 +1,15 @@
 import streamlit as st
 
-# Top Separator
-st.markdown("<hr style='border: 1px solid rgba(74, 144, 226, 0.5); margin: 20px 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);'>", unsafe_allow_html=True)
-
-# Title
+# Title with soft RGB glow effect
 st.markdown("""
-    <h1 style='text-align: center; font-size: 6vw; color: #4A90E2; margin: 20px 0;'>
+    <h1 style='text-align: center; font-size: 6vw; color: #4A90E2; margin: 20px 0; 
+                text-shadow: 0 0 10px rgba(74, 144, 226, 0.7), 0 0 20px rgba(74, 144, 226, 0.5);'>
         Daryl's Bibliography
     </h1>
 """, unsafe_allow_html=True)
 
-# Middle Separator
-st.markdown("<hr style='border: 1px solid rgba(74, 144, 226, 0.5); margin: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);'>", unsafe_allow_html=True)
+# Separator with glow effect
+st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0; box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);'>", unsafe_allow_html=True)
 
 # Description and Image columns
 desc_col, img_col = st.columns([3, 1])
@@ -32,14 +30,15 @@ with img_col:
     st.markdown(f"""
         <div style='text-align: center; margin: 20px 0;'>
             <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);' width='90%'/>
-            <div style='background-color: #4A90E2; color: white; font-size: 2vw; margin-top: 10px; padding: 10px; border-radius: 10px;'>
+            <div style='background-color: #4A90E2; color: white; font-size: 2vw; margin-top: 10px; padding: 10px; border-radius: 10px; 
+                        box-shadow: 0 0 10px rgba(74, 144, 226, 0.7);'>
                 Daryl E. Sagranada
             </div>
         </div>
     """, unsafe_allow_html=True)
 
-# Middle Separator
-st.markdown("<hr style='border: 1px solid rgba(74, 144, 226, 0.5); margin: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);'>", unsafe_allow_html=True)
+# Separator with glow effect
+st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0; box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);'>", unsafe_allow_html=True)
 
 # Details and Competencies columns
 col1 = st.columns(1)[0]
@@ -77,4 +76,10 @@ with competencies_col:
         "Fast learner."
     ]
 
-    with st.expander("
+    with st.expander("Competencies", expanded=False):
+        for competency in competencies:
+            st.markdown(f"- {competency}", unsafe_allow_html=True)
+
+# Footnote with glow effect
+st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0; box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);'>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 1em;'>This is a project made by me! Thank you for visiting my website, it is to be submitted for my <strong>[Programming Logic and Design]</strong> Course!</p>", unsafe_allow_html=True)
