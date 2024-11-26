@@ -1,7 +1,12 @@
 import streamlit as st
 
-# Title
-st.title("Daryl's Bibliography")
+# Title with color and size adjustment
+st.markdown(
+    """
+    <h1 style="color: #5D3FD3; text-align: center; font-size: 75%;">Daryl's Bibliography</h1>
+    """,
+    unsafe_allow_html=True
+)
 
 # Image with border and shadow
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
@@ -45,7 +50,7 @@ description = (
     "For the past three years, he has been in a loving relationship with his girlfriend, KC Aspacio."
 )
 
-# Display brief description in block format
+# Display brief description
 st.markdown(
     "<div style='border: 2px solid #5D3FD3; border-radius: 10px; padding: 10px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);'>"
     "<h3 style='color: #5D3FD3;'>Brief Description</h3>"
