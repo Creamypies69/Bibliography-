@@ -2,7 +2,7 @@ import streamlit as st
 
 # Title
 st.markdown("""
-    <h1 style='text-align: left; font-size: 8vw; margin-bottom: 20px;'>
+    <h1 style='text-align: left; font-size: 4vw; margin-bottom: 20px;'>
         Daryl's Bibliography
     </h1>
 """, unsafe_allow_html=True)
@@ -34,10 +34,10 @@ with st.expander("Personal Details"):
 
 # Brief description
 description = (
-    "Daryl is an 18-year-old college student pursuing a BSCpE at SNSU. "
-    "He graduated from DREESMNHS and lives in Surigao City. An introvert, "
-    "he dreams of building a network of autonomous computers and enjoys reading and gaming. "
-    "He has been in a loving relationship with his girlfriend, KC Aspacio, for three years."
+    "Daryl is an 18-year-old college student pursuing a Bachelor of Science in Computer Engineering (BSCpE) at SNSU. "
+    "He graduated from DREESMNHS and lives in Surigao City. An introverted individual, he dreams of building a network "
+    "of autonomous computers. In his free time, he enjoys reading and casual gaming. He has been in a loving relationship "
+    "with his girlfriend, KC Aspacio, for three years."
 )
 
 with st.expander("Brief Description"):
@@ -45,20 +45,20 @@ with st.expander("Brief Description"):
 
 # Competencies
 competencies = [
-    "Proficient in Python, Java, C++.",
-    "Understanding of computer networks.",
-    "Strong analytical skills.",
-    "Experience with software development.",
-    "Good communication skills.",
-    "Fluent in English and Bisaya.",
+    "Proficient in programming languages: Python, Java, C++.",
+    "Understanding of computer networks and systems.",
+    "Strong analytical and problem-solving skills.",
+    "Experience with software development methodologies.",
+    "Excellent communication and teamwork skills.",
+    "Fluent in both English and Bisaya.",
     "Computer literate.",
     "Fast learner."
 ]
 
 with st.expander("Competencies"):
-    st.markdown("Daryl has developed the following competencies:")
+    st.markdown("Daryl has developed a range of competencies, including:")
     for item in competencies:
         st.markdown(f"- {item}")
 
-# Footer
-st.markdown("<div style='text-align: center; margin-top: 20px; font-size: 0.9em;'><em>This is a personal project for <a href='#' style='color: #5D3FD3;'>Programming Logic and Design Course</a>.</em></div>", unsafe_allow_html=True)
+# Footer note
+st.markdown("<div style='text-align: center; margin-top: 20px; font-size: 0.9em;'><em>This is a personal project! Submitted for <a href='#' style='color: #5D3FD3;'>Programming Logic and Design Course</a>.</em></div>", unsafe_allow_html=True)
