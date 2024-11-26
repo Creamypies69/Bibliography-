@@ -1,32 +1,26 @@
 import streamlit as st
 
-# Title with added margin
+# Title
 st.markdown("""
-    <h1 style='text-align: center; font-size: 8vw; line-height: 1.2; height: 2.4em; margin-bottom: 20px;'>
+    <h1 style='text-align: left; font-size: 8vw; margin-bottom: 20px;'>
         Daryl's Bibliography
     </h1>
 """, unsafe_allow_html=True)
 
-# Original Separator with additional margin
-st.markdown("<hr style='border: 2px solid #5D3FD3; margin: 0;'>", unsafe_allow_html=True)
+# Separator
+st.markdown("<hr style='border: 2px solid #5D3FD3;'>", unsafe_allow_html=True)
 
 # Image
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-st.markdown(f"""
-    <div style="border: 2px solid var(--primary-color); border-radius: 10px; padding: 10px; margin-bottom: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
-        <a href="{image_url}" target="_blank">
-            <img src="{image_url}" style="width: 75%; max-width: 300px; border-radius: 5px;">
-        </a>
-    </div>
-""", unsafe_allow_html=True)
+st.image(image_url, caption="Daryl's Image", use_column_width='auto', style="border-radius: 5px;")
 
 # Personal details
 details = {
     "Age": "18",
     "Education": "Bachelor of Science in Computer Engineering (BSCpE)",
     "University": "Surigao del Norte State University (SNSU)",
-    "High School": "Don Ruben Edera Ecleo Sr. Memorial National High School (DREESMNHS)",
-    "Location": "Narciso Rosales Street, Barangay Taft, Surigao City, Surigao del Norte, Philippines",
+    "High School": "DREESMNHS",
+    "Location": "Surigao City, Philippines",
     "Phone Number": "09704978603",
     "Email": "daryl.sagranada.6146@gmail.com",
     "School Email": "dsagranada@ssct.edu.ph",
@@ -35,34 +29,36 @@ details = {
 }
 
 with st.expander("Personal Details"):
-    st.markdown("<ul>" + "".join(f"<li><strong>{k}:</strong> {v}</li>" for k, v in details.items()) + "</ul>", unsafe_allow_html=True)
+    for key, value in details.items():
+        st.markdown(f"**{key}:** {value}")
 
 # Brief description
 description = (
-    "Daryl is an 18-year-old college student pursuing a Bachelor of Science in Computer Engineering (BSCpE) at SNSU. "
-    "He graduated from DREESMNHS and lives in Surigao City. An introverted individual, he dreams of building a network "
-    "of autonomous computers. In his free time, he enjoys reading and casual gaming. He has been in a loving relationship "
-    "with his girlfriend, KC Aspacio, for three years."
+    "Daryl is an 18-year-old college student pursuing a BSCpE at SNSU. "
+    "He graduated from DREESMNHS and lives in Surigao City. An introvert, "
+    "he dreams of building a network of autonomous computers and enjoys reading and gaming. "
+    "He has been in a loving relationship with his girlfriend, KC Aspacio, for three years."
 )
 
 with st.expander("Brief Description"):
-    st.markdown(f"<div style='max-width: 100%; overflow-wrap: break-word;'>{description}</div>", unsafe_allow_html=True)
+    st.markdown(description)
 
 # Competencies
-competency_list = [
-    "Proficiency in programming languages: Python, Java, C++.",
-    "Understanding of computer networks and systems.",
-    "Strong analytical and problem-solving skills.",
-    "Experience with software development methodologies.",
-    "Excellent communication and teamwork skills.",
-    "Fluent in both English and Bisaya.",
+competencies = [
+    "Proficient in Python, Java, C++.",
+    "Understanding of computer networks.",
+    "Strong analytical skills.",
+    "Experience with software development.",
+    "Good communication skills.",
+    "Fluent in English and Bisaya.",
     "Computer literate.",
     "Fast learner."
 ]
 
-with st.expander("Competency"):
-    st.markdown("<pre>Daryl has developed a range of competencies, including:</pre>", unsafe_allow_html=True)
-    st.markdown("<ul>" + "".join(f"<li>{item}</li>" for item in competency_list) + "</ul>", unsafe_allow_html=True)
+with st.expander("Competencies"):
+    st.markdown("Daryl has developed the following competencies:")
+    for item in competencies:
+        st.markdown(f"- {item}")
 
-# Footer note
-st.markdown("<div style='text-align: center; margin-top: 20px; font-size: 0.9em;'><em>This is a personal project! Submitted for <a href='#' style='color: #5D3FD3;'>Programming Logic and Design Course</a>.</em></div>", unsafe_allow_html=True)
+# Footer
+st.markdown("<div style='text-align: center; margin-top: 20px; font-size: 0.9em;'><em>This is a personal project for <a href='#' style='color: #5D3FD3;'>Programming Logic and Design Course</a>.</em></div>", unsafe_allow_html=True)
