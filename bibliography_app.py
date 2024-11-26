@@ -1,18 +1,18 @@
 import streamlit as st
 
-# Title aligned to the far left
+# Title
 st.markdown("""
-    <h1 style='text-align: left; font-size: 8vw; margin-bottom: 20px;'>
+    <h1 style='text-align: left; font-size: 8vw; margin: 0; padding: 0;'>
         Daryl's Bibliography
     </h1>
 """, unsafe_allow_html=True)
 
 # Separator
-st.markdown("<hr style='border: 2px solid #5D3FD3;'>", unsafe_allow_html=True)
+st.markdown("<hr style='border: 2px solid #5D3FD3; margin: 0;'>", unsafe_allow_html=True)
 
 # Image
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-st.image(image_url, caption="Daryl's Image", use_column_width='auto', clamp=True)
+st.image(image_url, caption="Daryl's Image", use_column_width='auto')
 
 # Personal details
 details = {
@@ -45,12 +45,12 @@ with st.expander("Brief Description"):
 
 # Competencies
 competencies = [
-    "Proficient in programming languages: Python, Java, C++.",
-    "Understanding of computer networks and systems.",
+    "Proficient in Python, Java, C++.",
+    "Understanding of computer networks.",
     "Strong analytical and problem-solving skills.",
-    "Experience with software development methodologies.",
-    "Excellent communication and teamwork skills.",
-    "Fluent in both English and Bisaya.",
+    "Experience with software development.",
+    "Excellent communication skills.",
+    "Fluent in English and Bisaya.",
     "Computer literate.",
     "Fast learner."
 ]
@@ -60,5 +60,5 @@ with st.expander("Competencies"):
     for item in competencies:
         st.markdown(f"- {item}")
 
-# Footer note
+# Footer
 st.markdown("<div style='text-align: center; margin-top: 20px; font-size: 0.9em;'><em>This is a personal project! Submitted for <a href='#' style='color: #5D3FD3;'>Programming Logic and Design Course</a>.</em></div>", unsafe_allow_html=True)
