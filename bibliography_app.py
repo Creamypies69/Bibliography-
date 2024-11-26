@@ -1,7 +1,10 @@
 import streamlit as st
 
 # Title
-st.markdown("<h1 style='text-align: center; font-size: 5vw;'>Daryl's Bibliography</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; font-size: 6vw;'>Daryl's Bibliography</h1>", unsafe_allow_html=True)
+
+# Separator line
+st.markdown("<hr>", unsafe_allow_html=True)
 
 # Image
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
