@@ -2,7 +2,7 @@ import streamlit as st
 
 # Page title
 st.title("Daryl's Bibliography")
-st.markdown("---")  # Separator line after the title
+st.markdown("---")  # Separator
 
 # Profile image and name
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
@@ -16,9 +16,9 @@ description = (
     "with his girlfriend, KC Aspacio."
 )
 st.markdown(description, unsafe_allow_html=True)
-st.markdown("---")  # Separator line after the description
+st.markdown("---")  # Separator
 
-# Personal details
+# Personal details and competencies
 details = {
     "Age": "18",
     "Education": "BSCpE",
@@ -32,7 +32,6 @@ details = {
     "Weight": "56 kg"
 }
 
-# Competencies
 competencies = {
     "Programming Languages": "Python, Java, C++",
     "Web Development": "HTML, CSS, JavaScript",
@@ -52,7 +51,7 @@ with col2:
     for key, value in competencies.items():
         st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
-st.markdown("---")  # Separator line after personal details and competencies
+st.markdown("---")  # Separator
 
 # Related images in tabs
 st.subheader("Related Images")
@@ -86,15 +85,14 @@ images = {
     ]
 }
 
-# Iterate through tabs and display images
+# Display images in tabs
 for i, tab in enumerate(tabs):
     with tab:
-        # Use the index to access the corresponding tab name
         tab_name = tab_names[i]
         for img_url in images[tab_name]:
-            st.image(img _url, caption=f"{tab_name} Image", use_column_width=True)
+            st.image(img_url, caption=f"{tab_name} Image", use_column_width=True)
 
-st.markdown("---")  # Separator line before the footer
+st.markdown("---")  # Separator before the footer
 
-# Footer
+ # Footer
 st.markdown("Thank you for visiting Daryl's Bibliography!")
