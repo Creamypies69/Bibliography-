@@ -70,7 +70,7 @@ st.subheader("Related Images")
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
     "SNSU": ["https://via.placeholder.com/250?text=SNSU+Image+1", "https://via.placeholder.com/250?text=SNSU+Image+2", "https://via.placeholder.com/250?text=SNSU+Image+3"],
-    "KC ASPACIO": ["https://via.placeholder.com/250?text=KC+ASPACIO+Image+1", "https://via.placeholder.com /250?text=KC+ASPACIO+Image+2"],
+    "KC ASPACIO": ["https://via.placeholder.com/250?text=KC+ASPACIO+Image+1", "https://via.placeholder.com/250?text=KC+ ASPACIO+Image+2"],
     "DREESMNHS": ["https://via.placeholder.com/250?text=DREESMNHS+Image+1", "https://via.placeholder.com/250?text=DREESMNHS+Image+2", "https://via.placeholder.com/250?text=DREESMNHS+Image+3"],
     "DARYL": ["https://via.placeholder.com/250?text=DARYL+Image+1", "https://via.placeholder.com/250?text=DARYL+Image+2"],
     "SURIGAO CITY": ["https://via.placeholder.com/250?text=SURIGAO+CITY+Image+1", "https://via.placeholder.com/250?text=SURIGAO+CITY+Image+2", "https://via.placeholder.com/250?text=SURIGAO+CITY+Image+3"]
