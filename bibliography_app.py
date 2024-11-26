@@ -24,7 +24,7 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 # Profile image URL
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
 
-# Create columns for profile image, name tag, and description
+# Create a column for the profile image and name tag
 col1, col2, col3 = st.columns([1, 1, 2])  # Adjust proportions as needed
 
 with col1:
@@ -33,6 +33,7 @@ with col1:
 with col2:
     st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)
 
+# Description in the third column
 with col3:
     description = (
         "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
@@ -44,32 +45,30 @@ with col3:
 
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Personal details and competencies
-details = {
-    "Age": "18", "Education": "BSCpE", "University": "SNSU",
-    "High School": "DREESMNHS", "Location": "Surigao City, Philippines",
-    "Phone Number": "097 04978603", "Email": "daryl.sagranada.6146@gmail.com",
-    "School Email": "dsagranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
-}
+# Create a single column for expanders
+with st.container():
+    col1, col2 = st.columns([1, 1])  # Two columns for expanders
 
-competencies = {
-    "Programming Languages": "Python, Java, C++",
-    "Web Development": "HTML, CSS, JavaScript",
-    "Operating Systems": "Windows, Linux"
-}
+    with col1:
+        with st.expander("Personal Details", expanded=True):
+            details = {
+                "Age": "18", "Education": "BSCpE", "University": "SNSU",
+                "High School": "DREESMNHS", "Location": "Surigao City, Philippines",
+                "Phone Number": "097 04978603", "Email": "daryl.sagranada.6146@gmail.com",
+                "School Email": "dsagranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
+            }
+            for key, value in details.items():
+                st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
-# Create columns for expanders
-col1, col2, col3 = st.columns([2, 1, 2])
-
-with col1:
-    with st.expander("Personal Details"):
-        for key, value in details.items():
-            st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
-
-with col3:
-    with st.expander("Competencies"):
-        for key, value in competencies.items():
-            st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+    with col2:
+        with st.expander("Competencies", expanded=True):
+            competencies = {
+                "Programming Languages": "Python, Java, C++",
+                "Web Development": "HTML, CSS, JavaScript",
+                "Operating Systems": "Windows, Linux"
+            }
+            for key, value in competencies.items():
+                st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
@@ -82,7 +81,7 @@ tabs = st.tabs(tab_names)
 images = {
     "SNSU": ["https://via.placeholder.com/300?text=SNSU+Image+1", "https://via.placeholder.com/300?text=SNSU+Image+2", "https://via.placeholder.com/300?text=SNSU+Image+3"],
     "KC ASPACIO": ["https://via.placeholder.com/300?text=KC+ASPACIO+Image+1", "https://via.placeholder.com/300?text=KC+ASPACIO+Image+2"],
-    "DREESMNHS": ["https://via.placeholder.com/300?text=DREESMNHS+Image+1", "https:// via.placeholder.com/300?text=DREESMNHS+Image+2", "https://via.placeholder.com/300?text=DREESMNHS+Image+3"],
+    "DREESMNHS": ["https://via.placeholder.com/300?text=DREESMNHS+Image+1", "https://via.placeholder.com/300?text=DREESMNHS+Image+2", "https://via.placeholder.com/300?text=DREESMNHS+Image+3"],
     "DARYL": ["https://via.placeholder.com/300?text=DARYL+Image+1", "https://via.placeholder.com/300?text=DARYL+Image+2"],
     "SURIGAO CITY": ["https://via.placeholder.com/300?text=SURIGAO+CITY+Image+1", "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+2", "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+3"]
 }
