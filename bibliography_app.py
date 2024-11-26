@@ -29,7 +29,7 @@ st.markdown("""
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Image and Name
+# Image and Name on the left, Description on the right
 img_col, desc_col = st.columns([1, 2])  # Adjusted to give more space to the description
 
 # Image and Name
@@ -37,7 +37,7 @@ with img_col:
     image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
     st.markdown(f"""
         <div style='text-align: center; margin: 20px 0;'>
-            <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);' width='80%' height='auto'/>
+            <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);' width='100%' height='auto'/>
             <div class="name-box">Daryl E. Sagranada</div>
         </div>
     """, unsafe_allow_html=True)
@@ -50,7 +50,7 @@ with desc_col:
         "of autonomous computers. In his free time, he enjoys reading and casual gaming. He has been in a loving relationship "
         "with his girlfriend, KC Aspacio, for three years."
     )
-    st.markdown(f"<p style='font-size: calc(1.5em + 0.5vw); margin: 20px 0; text-align: justify;'>{description}</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='font-size: calc(1.2em + 0.5vw); margin: 20px 0; text-align: justify;'>{description}</p>", unsafe_allow_html=True)
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -99,7 +99,7 @@ tabs = st.tabs(tab_names)
 
 # Content for each tab
 with tabs[0]:
-    st.image(" https://via.placeholder.com/300", caption="SNSU Logo")
+ st.image("https://via.placeholder.com/300", caption="SNSU Logo")
 
 with tabs[1]:
     st.image("https://via.placeholder.com/300", caption="KC Aspacio's Profile Picture")
