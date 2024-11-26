@@ -89,7 +89,8 @@ with competencies_col:
     }
     with st.expander("Competencies", expanded=True):
         for key, value in competencies.items():
-            st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True) ```python
+            st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+
 # Simplified Competencies Section
 with competencies_col:
     competencies = {
