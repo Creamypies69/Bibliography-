@@ -6,7 +6,8 @@ highlight_color = "#FF5733"
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg" 
 link_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg" 
 
-background_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/main/Night%20Sky%20Wallpapers%20-%20Wallpaper%20Cave.jpeg"  # Fixed URL
+# Ensure the background image URL is correct and accessible
+background_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/main/Night%20Sky%20Wallpapers%20-%20Wallpaper%20Cave.jpeg?raw=true"
 
 # Set background and text styles
 st.markdown(
