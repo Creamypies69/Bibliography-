@@ -11,7 +11,7 @@ st.markdown("""
             100% { background-color: #FF5733; }
         }
         .gradient-text {
-            animation: gradient 5s ease infinite;
+            animation: gradient 10s ease infinite; /* Slowed down to 10s */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-size: 6vw;
@@ -19,7 +19,7 @@ st.markdown("""
             margin: 20px 0;
         }
         .gradient-box {
-            animation: gradient 5s ease infinite;
+            animation: gradient 10s ease infinite; /* Slowed down to 10s */
             padding: 10px;
             border-radius: 10px;
             color: white;
@@ -30,7 +30,7 @@ st.markdown("""
             border: 2px solid transparent;
             background-image: linear-gradient(90deg, #FF5733, #33FF57, #3357FF, #FF33A1, #FF5733);
             background-size: 400% 100%;
-            animation: gradient 10s ease infinite;
+            animation: gradient 10s ease infinite; /* Slowed down to 10s */
             height: 2px;
             margin: 0;
         }
