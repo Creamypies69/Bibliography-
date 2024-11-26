@@ -100,13 +100,23 @@ with competencies_col:
 
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Related images
+# Related images in tabs
 st.subheader("Related Images")
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 tabs = st.tabs(tab_names)
 
-for name in tab_names:
-    st.image("https://via.placeholder.com/300", caption=f"{name} Image")
+# Dictionary of images for each tab
+image_urls = {
+    "SNSU": "https://via.placeholder.com/300?text=SNSU",
+    "KC ASPACIO": "https://via.placeholder.com/300?text=KC+ASPACIO",
+    "DREESMNHS": "https://via.placeholder.com/300?text=DREESMNHS",
+    "DARYL": "https://via.placeholder.com/300?text=DARYL",
+    "SURIGAO CITY": "https://via.placeholder.com/300?text=SURIGAO+CITY"
+}
+
+for tab in tabs:
+    with tab:
+        st.image(image_urls[tab], caption=f"{tab} Image")
 
 # Separator below the tabs
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
