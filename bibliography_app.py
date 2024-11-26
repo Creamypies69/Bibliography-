@@ -1,9 +1,9 @@
 import streamlit as st
 
-# Title with color and size adjustment
+# Title with responsive size and color
 st.markdown(
     """
-    <h1 style="color: #5D3FD3; text-align: center; font-size: 75%;">Daryl's Bibliography</h1>
+    <h1 style="color: #5D3FD3; text-align: center; font-size: 5vw;">Daryl's Bibliography</h1>
     """,
     unsafe_allow_html=True
 )
