@@ -22,17 +22,22 @@ st.markdown(
 st.title("Daryl's Bibliography")
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Profile section with centered layout
-profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-st.image(profile_image_url, width=150, use_column_width=False)  # Set width to 150 pixels to make it smaller
-st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)  # Name tag
-st.markdown("<div class='description'>"
-            "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
-            "He graduated from DREESMNHS and lives in Surigao City. He dreams of building a network of autonomous computers. "
-            "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
-            "</div>", unsafe_allow_html=True)  # Description
-st.markdown("</div>", unsafe_allow_html=True)  # Close centered div
+# Create columns for profile picture, name tag, and description
+col1, col2 = st.columns([1, 2])  # Adjust the ratio as needed
+
+# Profile section with centered layout in the first column
+with col1:
+    profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
+    st.image(profile_image_url, width=150, use_column_width=False)  # Set width to 150 pixels
+    st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)  # Name tag
+
+# Description in the second column
+with col2:
+    st.markdown("<div class='description'>"
+                "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
+                "He graduated from DREESMNHS and lives in Surigao City. He dreams of building a network of autonomous computers. "
+                "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
+                "</div>", unsafe_allow_html=True)  # Description
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -69,8 +74,8 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 st.subheader("Related Images")
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
-    "SNSU": ["https://via.placeholder.com/250?text=SNSU+Image+1", "https://via.placeholder.com/250?text=SNSU+Image+2", "https://via.placeholder.com/250?text=SNSU+Image+3"],
-    "KC ASPACIO": ["https://via.placeholder.com/250?text=KC+ASP ACIO+Image+1", "https://via.placeholder.com/250?text=KC+ASPACIO+Image+2"],
+    "SNSU": ["https://via.placeholder.com/250?text=SNSU+Image+1", "https://via.placeholder.com/250?text=SNSU+Image+2", "https://via.placeholder.com/250?text=SNSU+Image +3"],
+    "KC ASPACIO": ["https://via.placeholder.com/250?text=KC+ASPACIO+Image+1", "https://via.placeholder.com/250?text=KC+ASPACIO+Image+2"],
     "DREESMNHS": ["https://via.placeholder.com/250?text=DREESMNHS+Image+1", "https://via.placeholder.com/250?text=DREESMNHS+Image+2", "https://via.placeholder.com/250?text=DREESMNHS+Image+3"],
     "DARYL": ["https://via.placeholder.com/250?text=DARYL+Image+1", "https://via.placeholder.com/250?text=DARYL+Image+2"],
     "SURIGAO CITY": ["https://via.placeholder.com/250?text=SURIGAO+CITY+Image+1", "https://via.placeholder.com/250?text=SURIGAO+CITY+Image+2", "https://via.placeholder.com/250?text=SURIGAO+CITY+Image+3"]
