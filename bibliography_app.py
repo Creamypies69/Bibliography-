@@ -1,24 +1,24 @@
 import streamlit as st
 
-# Title
+# Title with new styling
 st.markdown("""
-    <h1 style='text-align: left; font-size: 8vw; margin: 0; padding: 0;'>
+    <h1 style='text-align: center; font-size: 6vw; color: #4A90E2; margin: 20px 0;'>
         Daryl's Bibliography
     </h1>
 """, unsafe_allow_html=True)
 
-# Separator
-st.markdown("<hr style='border: 2px solid #5D3FD3; margin: 0;'>", unsafe_allow_html=True)
+# Styled separator
+st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0;'>", unsafe_allow_html=True)
 
-# Image with shadow and margin
+# Image with new shadow and border
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
 st.markdown(f"""
     <div style='text-align: center; margin: 20px 0;'>
-        <img src='{image_url}' style='border-radius: 10px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);' width='80%'/>
+        <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);' width='70%'/>
     </div>
 """, unsafe_allow_html=True)
 
-# Personal details
+# Personal details with improved layout
 details = {
     "Age": "18",
     "Education": "Bachelor of Science in Computer Engineering (BSCpE)",
@@ -32,11 +32,11 @@ details = {
     "Weight": "56 kg"
 }
 
-with st.expander("Personal Details"):
+with st.expander("Personal Details", expanded=True):
     for key, value in details.items():
-        st.markdown(f"**{key}:** {value}")
+        st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
-# Brief description
+# Brief description with new styling
 description = (
     "Daryl is an 18-year-old college student pursuing a Bachelor of Science in Computer Engineering (BSCpE) at SNSU. "
     "He graduated from DREESMNHS and lives in Surigao City. An introverted individual, he dreams of building a network "
@@ -44,10 +44,10 @@ description = (
     "with his girlfriend, KC Aspacio, for three years."
 )
 
-with st.expander("Brief Description"):
-    st.markdown(description)
+with st.expander("Brief Description", expanded=False):
+    st.markdown(f"<p style='font-size: 1.1em;'>{description}</p>", unsafe_allow_html=True)
 
-# Competencies
+# Competencies with bullet points
 competencies = [
     "Proficient in Python, Java, C++.",
     "Understanding of computer networks.",
@@ -59,10 +59,10 @@ competencies = [
     "Fast learner."
 ]
 
-with st.expander("Competencies"):
+with st.expander("Competencies", expanded=False):
     st.markdown("Daryl has developed a range of competencies, including:")
     for item in competencies:
         st.markdown(f"- {item}")
 
-# Footer
-st.markdown("<div style='text-align: center; margin-top: 20px; font-size: 0.9em;'><em>This is a personal project! Submitted for <a href='#' style='color: #5D3FD3;'>Programming Logic and Design Course</a>.</em></div>", unsafe_allow_html=True)
+# Footer with new styling
+st.markdown("<div style='text-align: center; margin-top: 20px; font-size: 0.9em; color: #888;'><em>This is a personal project! Submitted for <a href='#' style='color: #4A90E2;'>Programming Logic and Design Course</a>.</em></div>", unsafe_allow_html=True)
