@@ -30,7 +30,7 @@ st.markdown("""
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Description and Image columns
-desc_col, img_col = st.columns([1, 1])  # Adjusted to occupy equal space
+desc_col, img_col = st.columns([2, 1])  # Adjusted to give more space to the description
 
 # Description
 with desc_col:
@@ -47,7 +47,7 @@ with img_col:
     image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
     st.markdown(f"""
         <div style='text-align: center; margin: 20px 0;'>
-            <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);' width='50%'/>
+            <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);' width='100%' height='auto'/>
             <div class="name-box">Daryl E. Sagranada</div>
         </div>
     """, unsafe_allow_html=True)
@@ -99,7 +99,7 @@ tabs = st.tabs(tab_names)
 
 # Content for each tab
 with tabs[0]:
-    st.image("https://via.placeholder.com /300", caption="SNSU Logo")
+    st.image("https://via.placeholder.com/300", caption="SNSU Logo")
 
 with tabs[1]:
     st.image("https://via.placeholder.com/300", caption="KC Aspacio's Profile Picture")
