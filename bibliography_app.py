@@ -77,8 +77,9 @@ images = {
 
 for tab in tabs:
     with tab:
-        for img_url in images[tab]:
-            st.image(img_url, caption=f"{tab} Image", use_column_width=True)
+        # Use the tab's name to access the images
+        for img_url in images[tab.name]:  # Corrected this line
+            st.image(img_url, caption=f"{tab.name} Image", use_column_width=True)
 
 # Footer
 st.markdown("Thank you for visiting Daryl's Bibliography!")
