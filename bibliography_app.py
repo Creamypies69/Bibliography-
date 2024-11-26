@@ -1,25 +1,28 @@
 import streamlit as st
 
-image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg" 
-link_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg" 
-
 # Background image URL
 background_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/main/Night%20Sky%20Wallpapers%20-%20Wallpaper%20Cave.jpeg"
 
-# CSS styles
+# CSS styles for the app
 st.markdown(
     f"""
     <style>
     .reportview-container {{
         background: url('{background_image_url}');
-        background-size: cover;
-        background-attachment: fixed;
+        background-size: cover; /* Cover the area */
+        background-attachment: fixed; /* Fixed during scroll */
+        background-position: center; /* Center the image */
     }}
     .sidebar .sidebar-content {{
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.8); /* Semi-transparent sidebar */
     }}
-    h1, h2, h3 {{
+    h1 {{
         color: #f63366;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }}
+    h2, h3 {{
+        color: #f63366;
+        font-size: 24px; /* Consistent font size */
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }}
     .stButton > button {{
@@ -53,6 +56,9 @@ st.markdown(
 st.markdown('<h1 style="text-align: center;">Daryl\'s Bibliography</h1>', unsafe_allow_html=True)
 
 # Image display
+image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg" 
+link_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg" 
+
 st.markdown(
     f"""
     <div class="shadow image-container">
@@ -83,8 +89,7 @@ st.markdown(personal_details, unsafe_allow_html=True)
 st.markdown("<h2>Brief Description</h2>", unsafe_allow_html=True)
 brief_description = (
     "<div class='shadow'>"
-    "<p>Daryl enjoys spending his free time immersed in books and visual novels, balancing his intellectual pursuits with casual gaming sessions. "
-    "For the past three years, he has been in a loving relationship with his girlfriend, KC Aspacio, who shares and supports his laid-back and creative nature.</p>"
+    "<p>Daryl enjoys reading and gaming in his free time. He has been in a loving relationship with his girlfriend, KC Aspacio, for three years.</p>"
     "</div>"
 )
 
