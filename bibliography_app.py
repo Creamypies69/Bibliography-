@@ -48,18 +48,9 @@ st.subheader("Related Images")
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 tabs = st.tabs(tab_names)
 
-# Image URLs for each tab
-image_urls = {
-    "SNSU": "https://via.placeholder.com/300?text=SNSU",
-    "KC ASPACIO": "https://via.placeholder.com/300?text=KC+ASPACIO",
-    "DREESMNHS": "https://via.placeholder.com/300?text=DREESMNHS",
-    "DARYL": "https://via.placeholder.com/300?text=DARYL",
-    "SURIGAO CITY": "https://via.placeholder.com/300?text=SURIGAO+CITY"
-}
-
 for tab in tabs:
     with tab:
-        st.image(image_urls[tab], caption=f"{tab} Image")
+        st.image("https://via.placeholder.com/300", caption=f"{tab} Image")
 
 # Footer
 st.markdown("Thank you for visiting Daryl's Bibliography!")
