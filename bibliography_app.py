@@ -8,6 +8,7 @@ link_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f06
 
 background_image_url = "https://github.com/Creamypies69/Bibliography-/blob/main/Night%20Sky%20Wallpapers%20-%20Wallpaper%20Cave.jpeg?raw=true"
 
+# Set background and text styles
 st.markdown(
     f"""
     <style>
@@ -33,6 +34,13 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Title
+st.title("Daryl's Bibliography")
+
+# Subtitle
+st.subheader("Brief Description")
+
+# Display picture
 st.markdown(
     f"""
     <a href="{link_url}" target="_blank">
@@ -42,5 +50,14 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.title("Welcome to My Streamlit App")
-st.write("This is a sample Streamlit app with a background image and an image of Me! ★")
+# Description text
+description = (
+    "Daryl is an 18-year-old college student currently pursuing a Bachelor of Science in Computer Engineering (BSCpE) "
+    "at Surigao del Norte State University (SNSU). A proud graduate of Don Ruben Edera Ecleo Sr. Memorial National High School "
+    "(DREESMNHS), he resides on Narciso Rosales Street in Barangay Taft, Surigao City, Surigao del Norte, Philippines. "
+    "Daryl enjoys spending his free time immersed in books and visual novels, balancing his intellectual pursuits with casual gaming sessions. "
+    "For the past three years, he has been in a loving relationship with his girlfriend, KC Aspacio, who shares and supports his laid-back and creative nature."
+)
+
+# Show description
+st.markdown(description)
