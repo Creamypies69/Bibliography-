@@ -31,10 +31,10 @@ details = {
     "Location": "Narciso Rosales Street, Barangay Taft, Surigao City, Surigao del Norte, Philippines"
 }
 
-# Expander for Personal Details with custom font size
-with st.expander("<span style='color: #5D3FD3; font-weight: bold;'>Personal Details</span>", expanded=False, unsafe_allow_html=True):
+# Display personal details in an expander
+with st.expander("Personal Details", expanded=False):
     st.markdown(
-        "<ul style='list-style-type: none; padding: 0; font-size: 0.8vw;'>" +
+        "<ul style='list-style-type: none; padding: 0;'>" +
         "".join(f"<li><strong>{k}:</strong> {v}</li>" for k, v in details.items()) +
         "</ul>",
         unsafe_allow_html=True
@@ -49,9 +49,19 @@ description = (
     "For the past three years, he has been in a loving relationship with his girlfriend, KC Aspacio."
 )
 
-# Expander for Brief Description with custom font size
-with st.expander("<span style='color: #5D3FD3; font-weight: bold;'>Brief Description</span>", expanded=False, unsafe_allow_html=True):
+# Display brief description in an expander
+with st.expander("Brief Description", expanded=False):
     st.markdown(
-        f"<pre style='text-align: left; font-size: 0.8vw;'>{description}</pre>",
+        "<pre style='text-align: left;'>{}</pre>".format(description),
         unsafe_allow_html=True
     )
+
+# Updated note at the bottom of the page
+st.markdown(
+    """
+    <div style="text-align: center; margin-top: 20px; font-size: 0.9em; color: #555;">
+        <em>This is a personal project by me! Submitted for <a href="#" style="color: #5D3FD3;">Programming Logic and Design Course</a>.</em>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
