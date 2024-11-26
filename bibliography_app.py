@@ -13,7 +13,7 @@ image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f0
 
 st.markdown(
     f"""
-    <div style="border: 2px solid black; border-radius: 10px; padding: 10px; margin-bottom: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+    <div style="border: 2px solid var(--primary-color); border-radius: 10px; padding: 10px; margin-bottom: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
         <a href="{image_url}" target="_blank">
             <img src="{image_url}" style="width: 75%; max-width: 300px; border-radius: 5px;">
         </a>
@@ -28,7 +28,12 @@ details = {
     "Education": "Bachelor of Science in Computer Engineering (BSCpE)",
     "University": "Surigao del Norte State University (SNSU)",
     "High School": "Don Ruben Edera Ecleo Sr. Memorial National High School (DREESMNHS)",
-    "Location": "Narciso Rosales Street, Barangay Taft, Surigao City, Surigao del Norte, Philippines"
+    "Location": "Narciso Rosales Street, Barangay Taft, Surigao City, Surigao del Norte, Philippines",
+    "Phone Number": "09704978603",
+    "Email": "daryl.sagranada.6146@gmail.com",
+    "School Email": "dsagranada@ssct.edu.ph",
+    "Height": "168 cm",
+    "Weight": "56 kg"
 }
 
 # Display personal details
@@ -59,9 +64,4 @@ with st.expander("Brief Description", expanded=False):
 # Note at the bottom
 st.markdown(
     """
-    <div style="text-align: center; margin-top: 20px; font-size: 0.9em;">
-        <em>This is a personal project by me! Submitted for <a href="#" style="color: #5D3FD3;">Programming Logic and Design Course</a>.</em>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+    <div style="text-align:
