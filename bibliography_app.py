@@ -30,7 +30,7 @@ st.markdown("""
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Description and Image columns
-desc_col, img_col = st.columns([3, 1])
+desc_col, img_col = st.columns([1, 1])  # Adjusted to occupy equal space
 
 # Description
 with desc_col:
@@ -47,7 +47,7 @@ with img_col:
     image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
     st.markdown(f"""
         <div style='text-align: center; margin: 20px 0;'>
-            <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);' width='90%'/>
+            <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);' width='50%'/>
             <div class="name-box">Daryl E. Sagranada</div>
         </div>
     """, unsafe_allow_html=True)
@@ -93,13 +93,13 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 # Related Images Section
 st.subheader("Related Images")
 
-# Tabs for related images
-tab_names = ["Daryl", "KC ASPACIO", "DREESMNHS", "SNSU", "SURIGAO CITY"]
+# Tabs for related images with swapped order
+tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "Daryl", "SURIGAO CITY"]
 tabs = st.tabs(tab_names)
 
 # Content for each tab
 with tabs[0]:
-    st.image("https://raw.githubusercontent.com/Creamypies69 /Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg", caption="Daryl's Profile Picture")
+    st.image("https://via.placeholder.com /300", caption="SNSU Logo")
 
 with tabs[1]:
     st.image("https://via.placeholder.com/300", caption="KC Aspacio's Profile Picture")
@@ -108,7 +108,7 @@ with tabs[2]:
     st.image("https://via.placeholder.com/300", caption="DREESMNHS Logo")
 
 with tabs[3]:
-    st.image("https://via.placeholder.com/300", caption="SNSU Logo")
+    st.image("https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg", caption="Daryl's Profile Picture")
 
 with tabs[4]:
     st.image("https://via.placeholder.com/300", caption="Surigao City Skyline")
