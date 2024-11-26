@@ -1,5 +1,8 @@
 import streamlit as st
 
+# Top Separator
+st.markdown("<hr style='border: 1px solid rgba(74, 144, 226, 0.5); margin: 20px 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);'>", unsafe_allow_html=True)
+
 # Title
 st.markdown("""
     <h1 style='text-align: center; font-size: 6vw; color: #4A90E2; margin: 20px 0;'>
@@ -7,8 +10,8 @@ st.markdown("""
     </h1>
 """, unsafe_allow_html=True)
 
-# Separator
-st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0;'>", unsafe_allow_html=True)
+# Middle Separator
+st.markdown("<hr style='border: 1px solid rgba(74, 144, 226, 0.5); margin: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);'>", unsafe_allow_html=True)
 
 # Description and Image columns
 desc_col, img_col = st.columns([3, 1])
@@ -35,8 +38,8 @@ with img_col:
         </div>
     """, unsafe_allow_html=True)
 
-# Separator
-st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0;'>", unsafe_allow_html=True)
+# Middle Separator
+st.markdown("<hr style='border: 1px solid rgba(74, 144, 226, 0.5); margin: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);'>", unsafe_allow_html=True)
 
 # Details and Competencies columns
 col1 = st.columns(1)[0]
@@ -74,10 +77,4 @@ with competencies_col:
         "Fast learner."
     ]
 
-    with st.expander("Competencies", expanded=False):
-        for competency in competencies:
-            st.markdown(f"- {competency}", unsafe_allow_html=True)
-
-# Footnote
-st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0;'>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; font-size: 1em;'>This is a project made by me! Thank you for visiting my website, it is to be submitted for my <strong>[Programming Logic and Design]</strong> Course!</p>", unsafe_allow_html=True)
+    with st.expander("
