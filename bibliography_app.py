@@ -12,6 +12,7 @@ st.markdown(
     }
     .description { font-size: 18px; text-align: center; }
     .footer { text-align: center; margin-top: 20px; color: #6A0C9A; }
+    .profile-image { display: block; margin: 0 auto; }  /* Center the image */
     </style>
     """,
     unsafe_allow_html=True
@@ -24,7 +25,7 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 # Profile section with centered layout
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
 st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-st.image(profile_image_url, width=200)  # Profile picture
+st.image(profile_image_url, width=300, use_column_width=False, caption="Daryl E. Sagranada")  # Increased size
 st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)  # Name tag
 st.markdown("<div class='description'>"
             "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
@@ -69,8 +70,8 @@ st.subheader("Related Images")
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
     "SNSU": ["https://via.placeholder.com/300?text=SNSU+Image+1", "https://via.placeholder.com/300?text=SNSU+Image+2", "https://via.placeholder.com/300?text=SNSU+Image+3"],
-    "KC ASPACIO": ["https://via .placeholder.com/300?text=KC+ASPACIO+Image+1", "https://via.placeholder.com/300?text=KC+ASPACIO+Image+2"],
-    "DREESMNHS": ["https://via.placeholder.com/300?text=DREESMNHS+Image+1", "https://via.placeholder.com/300?text=DREESMNHS+Image+2", "https://via.placeholder.com/300?text=DREESMNHS+Image+3"],
+    "KC ASPACIO": ["https://via.placeholder.com/300?text=KC+ASPACIO+Image+1", "https://via.placeholder.com/300?text=KC+ASPACIO+Image+2"],
+    "DREESMNHS ": ["https://via.placeholder.com/300?text=DREESMNHS+Image+1", "https://via.placeholder.com/300?text=DREESMNHS+Image+2", "https://via.placeholder.com/300?text=DREESMNHS+Image+3"],
     "DARYL": ["https://via.placeholder.com/300?text=DARYL+Image+1", "https://via.placeholder.com/300?text=DARYL+Image+2"],
     "SURIGAO CITY": ["https://via.placeholder.com/300?text=SURIGAO+CITY+Image+1", "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+2", "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+3"]
 }
