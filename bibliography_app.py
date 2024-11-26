@@ -2,6 +2,7 @@ import streamlit as st
 
 # Page title
 st.title("Daryl's Bibliography")
+st.markdown("---")  # Separator line after the title
 
 # Profile image and name
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
@@ -15,6 +16,7 @@ description = (
     "with his girlfriend, KC Aspacio, for three years."
 )
 st.markdown(description, unsafe_allow_html=True)
+st.markdown("---")  # Separator line after the description
 
 # Personal details
 details = {
@@ -33,6 +35,8 @@ with st.expander("Personal Details"):
     for key, value in details.items():
         st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
+st.markdown("---")  # Separator line after personal details
+
 # Competencies
 competencies = {
     "Programming Languages": "Python, Java, C++",
@@ -42,6 +46,8 @@ competencies = {
 with st.expander("Competencies"):
     for key, value in competencies.items():
         st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+
+st.markdown("---")  # Separator line after competencies
 
 # Related images in tabs
 st.subheader("Related Images")
@@ -82,6 +88,8 @@ for i, tab in enumerate(tabs):
         tab_name = tab_names[i]
         for img_url in images[tab_name]:
             st.image(img_url, caption=f"{tab_name} Image", use_column_width=True)
+
+st .markdown("---")  # Separator line before the footer
 
 # Footer
 st.markdown("Thank you for visiting Daryl's Bibliography!")
