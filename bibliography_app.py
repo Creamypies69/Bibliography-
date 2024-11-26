@@ -31,10 +31,10 @@ details = {
     "Location": "Narciso Rosales Street, Barangay Taft, Surigao City, Surigao del Norte, Philippines"
 }
 
-# Display personal details in an expander
-with st.expander("Personal Details", expanded=False):
+# Expander for Personal Details with custom font size
+with st.expander("<span style='color: #5D3FD3; font-weight: bold;'>Personal Details</span>", expanded=False, unsafe_allow_html=True):
     st.markdown(
-        "<ul style='list-style-type: none; padding: 0;'>" +
+        "<ul style='list-style-type: none; padding: 0; font-size: 0.8vw;'>" +
         "".join(f"<li><strong>{k}:</strong> {v}</li>" for k, v in details.items()) +
         "</ul>",
         unsafe_allow_html=True
@@ -49,9 +49,9 @@ description = (
     "For the past three years, he has been in a loving relationship with his girlfriend, KC Aspacio."
 )
 
-# Display brief description in an expander
-with st.expander("Brief Description", expanded=False):
+# Expander for Brief Description with custom font size
+with st.expander("<span style='color: #5D3FD3; font-weight: bold;'>Brief Description</span>", expanded=False, unsafe_allow_html=True):
     st.markdown(
-        "<pre style='text-align: left;'>{}</pre>".format(description),
+        f"<pre style='text-align: left; font-size: 0.8vw;'>{description}</pre>",
         unsafe_allow_html=True
     )
