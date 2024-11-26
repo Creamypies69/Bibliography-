@@ -10,9 +10,13 @@ st.markdown("""
 # Separator
 st.markdown("<hr style='border: 2px solid #5D3FD3; margin: 0;'>", unsafe_allow_html=True)
 
-# Image
+# Image with shadow
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-st.image(image_url, caption="Daryl's Image", use_column_width='auto')
+st.markdown(f"""
+    <div style='text-align: center;'>
+        <img src='{image_url}' style='border-radius: 10px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);' width='80%'/>
+    </div>
+""", unsafe_allow_html=True)
 
 # Personal details
 details = {
