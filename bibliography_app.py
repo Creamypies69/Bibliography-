@@ -1,15 +1,37 @@
 import streamlit as st
 
-# Title with soft RGB glow effect
+# Custom HTML and CSS for gradient color effect
 st.markdown("""
-    <h1 style='text-align: center; font-size: 6vw; color: #4A90E2; margin: 20px 0; 
-                text-shadow: 0 0 10px rgba(74, 144, 226, 0.7), 0 0 20px rgba(74, 144, 226, 0.5);'>
-        Daryl's Bibliography
-    </h1>
+    <style>
+        @keyframes gradient {
+            0% { background-color: #FF5733; }
+            25% { background-color: #33FF57; }
+            50% { background-color: #3357FF; }
+            75% { background-color: #FF33A1; }
+            100% { background-color: #FF5733; }
+        }
+        .gradient-text {
+            animation: gradient 5s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 6vw;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .gradient-box {
+            animation: gradient 5s ease infinite;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            font-size: 2vw;
+            margin-top: 10px;
+        }
+    </style>
+    <h1 class="gradient-text">Daryl's Bibliography</h1>
 """, unsafe_allow_html=True)
 
-# Separator with glow effect
-st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0; box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);'>", unsafe_allow_html=True)
+# Separator
+st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0;'>", unsafe_allow_html=True)
 
 # Description and Image columns
 desc_col, img_col = st.columns([3, 1])
@@ -24,27 +46,24 @@ with desc_col:
     )
     st.markdown(f"<p style='font-size: calc(1.5em + 0.5vw); margin: 20px 0; text-align: justify;'>{description}</p>", unsafe_allow_html=True)
 
-# Image
+# Image and Name Box
 with img_col:
     image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
     st.markdown(f"""
         <div style='text-align: center; margin: 20px 0;'>
             <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);' width='90%'/>
-            <div style='background-color: #4A90E2; color: white; font-size: 2vw; margin-top: 10px; padding: 10px; border-radius: 10px; 
-                        box-shadow: 0 0 10px rgba(74, 144, 226, 0.7);'>
+            <div class="gradient-box">
                 Daryl E. Sagranada
             </div>
         </div>
     """, unsafe_allow_html=True)
 
-# Separator with glow effect
-st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0; box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);'>", unsafe_allow_html=True)
-
-# Details and Competencies columns
-col1 = st.columns(1)[0]
-details_col, competencies_col = st.columns(2)
+# Separator
+st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0;'>", unsafe_allow_html=True)
 
 # Personal Details
+details_col, competencies_col = st.columns(2)
+
 with details_col:
     details = {
         "Age": "18",
@@ -80,6 +99,6 @@ with competencies_col:
         for competency in competencies:
             st.markdown(f"- {competency}", unsafe_allow_html=True)
 
-# Footnote with glow effect
-st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0; box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);'>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; font-size: 1em;'>This is a project made by me! Thank you for visiting my website, it is to be submitted for my <strong>[Programming Logic and Design]</strong> Course!</p>", unsafe_allow_html=True)
+# Footnote
+st.markdown("<hr style='border: 2px solid #4A 90E2; margin: 0;'>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 0.8em;'>This bibliography is a personal project created using Streamlit.</p>", unsafe_allow_html=True)
