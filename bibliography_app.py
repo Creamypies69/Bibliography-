@@ -45,8 +45,7 @@ st.markdown("""
     <h1 class="header">Daryl's Bibliography</h1>
 """, unsafe_allow_html=True)
 
-# Separators
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
+# Separator between title and picture
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Profile image and name
@@ -108,6 +107,9 @@ tabs = st.tabs(tab_names)
 
 for name in tab_names:
     st.image("https://via.placeholder.com/300", caption=f"{name} Image")
+
+# Separator below the tabs
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Footer
 st.markdown("<div class='footer'>Thank you for visiting Daryl's Bibliography!</div>", unsafe_allow_html=True)
