@@ -85,4 +85,4 @@ with col1:
                 st.markdown(f"- {item}")
 
 # Footer with new styling
-st.markdown("<div style='text-align: center; margin-top: 20px; font
+st.markdown("<div style='text-align: center; margin-top: 20px; font -size: 0.9em; color: #888;'><em>This is a personal project!</em></div>", unsafe_allow_html=True)
