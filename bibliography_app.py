@@ -1,15 +1,9 @@
 import streamlit as st
 
-# Background image URL
-background_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/main/Night%20Sky%20Wallpapers%20-%20Wallpaper%20Cave.jpeg"
-
-# Display the background image
-st.image(background_image_url, use_column_width=True, clamp=True)
-
-# Title with two lines
+# Display title
 st.markdown('<h1 style="text-align: center; color: #f63366;">Daryl\'s<br>Bibliography</h1>', unsafe_allow_html=True)
 
-# Image display
+# Display image
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg" 
 link_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg" 
 
@@ -24,7 +18,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Personal details section as a list
+# Display personal details
 st.markdown("<h3 style='text-align: center; color: #f63366;'>Personal Details</h3>", unsafe_allow_html=True)
 personal_details = (
     "<div>"
@@ -38,10 +32,9 @@ personal_details = (
     "</div>"
 )
 
-# Show personal details
 st.markdown(personal_details, unsafe_allow_html=True)
 
-# Brief description section
+# Display brief description
 st.markdown("<h2 style='text-align: center; color: #f63366;'>Brief Description</h2>", unsafe_allow_html=True)
 brief_description = (
     "<div>"
@@ -49,5 +42,4 @@ brief_description = (
     "</div>"
 )
 
-# Show brief description
 st.markdown(brief_description, unsafe_allow_html=True)
