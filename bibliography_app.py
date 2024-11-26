@@ -30,8 +30,7 @@ st.markdown(
 
 person_description = {
     "name": "Daryl Escaño Sagranada",
-    "description": "Daryl is an 18-year-old college student currently pursuing a Bachelor of Science in Computer Engineering (BSCpE) at Surigao del Norte State University (SNSU). A proud graduate of Don Ruben Edera Ecleo Sr. Memorial National High School (DREESMNHS), he resides on Narciso Rosales Street in Barangay Taft, Surigao City, Surigao del Norte, Philippines. Daryl enjoys spending his free time immersed in books and visual novels, balancing his intellectual pursuits with casual gaming sessions. For the past three years, he has been in a loving relationship with his girlfriend, KC Aspacio, who shares and supports his laid-back and creative nature.
-
+    "description": "Daryl is an 18-year-old college student currently pursuing a Bachelor of Science in Computer Engineering (BSCpE) at Surigao del Norte State University (SNSU). A proud graduate of Don Ruben Edera Ecleo Sr. Memorial National High School (DREESMNHS), he resides on Narciso Rosales Street in Barangay Taft, Surigao City, Surigao del Norte, Philippines. Daryl enjoys spending his free time immersed in books and visual novels, balancing his intellectual pursuits with casual gaming sessions. For the past three years, he has been in a loving relationship with his girlfriend, KC Aspacio, who shares and supports his laid-back and creative nature."
 }
 
 st.title("Daryl's Bibliography")
