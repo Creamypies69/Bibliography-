@@ -18,7 +18,7 @@ st.markdown(
     .sidebar .sidebar-content {{
         background: rgba(255, 255, 255, 0.8);
     }}
-    h1, h2, h3, h4, h5, h6 {{
+    h1, h2, h3 {{
         color: #f63366;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }}
@@ -64,10 +64,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Personal details
+# Personal details section
+st.markdown("<h3>Personal Details</h3>", unsafe_allow_html=True)
 personal_details = (
     "<div class='shadow'>"
-    "<h3>Personal Details</h3>"
     "<p><strong>Age:</strong> 18</p>"
     "<p><strong>Education:</strong> Bachelor of Science in Computer Engineering (BSCpE)</p>"
     "<p><strong>University:</strong> Surigao del Norte State University (SNSU)</p>"
@@ -79,10 +79,10 @@ personal_details = (
 # Show personal details
 st.markdown(personal_details, unsafe_allow_html=True)
 
-# Brief description
+# Brief description section
+st.markdown("<h2>Brief Description</h2>", unsafe_allow_html=True)
 brief_description = (
     "<div class='shadow'>"
-    "<h2>Brief Description</h2>"
     "<p>Daryl enjoys spending his free time immersed in books and visual novels, balancing his intellectual pursuits with casual gaming sessions. "
     "For the past three years, he has been in a loving relationship with his girlfriend, KC Aspacio, who shares and supports his laid-back and creative nature.</p>"
     "</div>"
