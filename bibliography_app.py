@@ -16,12 +16,12 @@ desc_col, img_col = st.columns([3, 1])  # 3:1 ratio for description and image
 # Brief Description
 with desc_col:
     description = (
-        "Daryl is an 18-year-old college student pursuing a Bachelor of Science in Computer Engineering (BSCpE) at SNSU. "
+        "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a Bachelor of Science in Computer Engineering (BSCpE) at SNSU. "
         "He graduated from DREESMNHS and lives in Surigao City. An introverted individual, he dreams of building a network "
         "of autonomous computers. In his free time, he enjoys reading and casual gaming. He has been in a loving relationship "
         "with his girlfriend, KC Aspacio, for three years."
     )
-    st.markdown(f"<p style='font-size: 1.5em; margin: 20px 0;'>{description}</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='font-size: 1.5em; margin: 20px 0; text-align: justify;'>{description}</p>", unsafe_allow_html=True)
 
 # Right column for the image
 with img_col:
@@ -30,11 +30,14 @@ with img_col:
     st.markdown(f"""
         <div style='text-align: center; margin: 20px 0;'>
             <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);' width='90%'/>
-            <div style='font-size: 2vw; color: #4A90E2; margin-top: 10px;'>
+            <div style='background-color: #4A90E2; color: white; font-size: 2vw; margin-top: 10px; padding: 10px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);'>
                 Daryl E. Sagranada
             </div>
         </div>
     """, unsafe_allow_html=True)
+
+# Separator between sections
+st.markdown("<hr style='border: 2px solid #4A90E2; margin: 0;'>", unsafe_allow_html=True)
 
 # Create main columns for layout
 col1 = st.columns(1)[0]  # Only one column for the details
@@ -82,4 +85,4 @@ with col1:
                 st.markdown(f"- {item}")
 
 # Footer with new styling
-st.markdown("<div style='text-align: center; margin-top: 20px; font-size: 0.9em; color: #888;'><em>This is a personal project! Submitted for <a href='#' style='color: #4A90E2;'>Programming Logic and Design Course</a>.</em></div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align: center; margin-top: 20px; font
