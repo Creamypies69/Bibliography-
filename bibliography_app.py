@@ -1,7 +1,11 @@
 import streamlit as st
 
-# Title
-st.markdown("<h1 style='text-align: center; font-size: 6vw;'>Daryl's Bibliography</h1>", unsafe_allow_html=True)
+# Title with fixed height and line height for two lines
+st.markdown("""
+    <h1 style='text-align: center; font-size: 8vw; line-height: 1.2; height: 2.4em; overflow: hidden;'>
+        Daryl's Bibliography
+    </h1>
+""", unsafe_allow_html=True)
 
 # Separator line
 st.markdown("<hr>", unsafe_allow_html=True)
