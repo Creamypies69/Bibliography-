@@ -30,6 +30,9 @@ with img_col:
     st.markdown(f"""
         <div style='text-align: center; margin: 20px 0;'>
             <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);' width='90%'/>
+            <div style='font-size: 2vw; color: #4A90E2; margin-top: 10px;'>
+                Daryl E. Sagranada
+            </div>
         </div>
     """, unsafe_allow_html=True)
 
