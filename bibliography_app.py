@@ -22,9 +22,10 @@ st.markdown("""
             animation: gradient 10s ease infinite; /* Slowed down to 10s */
             padding: 10px;
             border-radius: 10px;
-            color: white;
+            color: black;  /* Changed to black */
             font-size: 2vw;
             margin-top: 10px;
+            font-weight: bold;  /* Made it bold */
         }
         .gradient-separator {
             border: 2px solid transparent;
@@ -33,6 +34,11 @@ st.markdown("""
             animation: gradient 10s ease infinite; /* Slowed down to 10s */
             height: 2px;
             margin: 0;
+        }
+        .sidebar {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc; /* Optional: add border to sidebar */
         }
     </style>
     <h1 class="gradient-text">Daryl's Bibliography</h1>
@@ -79,7 +85,7 @@ with details_col:
         "University": "Surigao del Norte State University (SNSU)",
         "High School": "DREESMNHS",
         "Location": "Surigao City, Philippines",
-        "Phone Number": "09704978603",
+        "Phone Number": "097 04978603",
         "Email": "daryl.sagranada.6146@gmail.com",
         "School Email": "dsagranada@ssct.edu.ph",
         "Height": "168 cm",
@@ -110,5 +116,20 @@ with competencies_col:
 # Gradient Separator
 st.markdown("<div class='gradient-separator'></div>", unsafe_allow_html=True)
 
+# Sidebar for Related Pictures with Tabs
+tab_names = ["DARYL", "KC ASPACIO", "DREESMNHS", "SNSU", "SURIGAO CITY"]
+selected_tab = st.sidebar.selectbox("Select a tab", tab_names)
+
+if selected_tab == "DARYL":
+    st.sidebar.image("https://example.com/daryl.jpg", caption="Daryl's Picture", use_column_width=True)
+elif selected_tab == "KC ASPACIO":
+    st.sidebar.image("https://example.com/kc.jpg", caption="KC Aspacio's Picture", use_column_width=True)
+elif selected_tab == "DREESMNHS":
+    st.sidebar.image("https://example.com/dreesmnhs.jpg", caption="DREESMNHS", use_column_width=True)
+elif selected_tab == "SNSU":
+    st.sidebar.image("https://example.com/snsu.jpg", caption="SNSU", use_column_width=True)
+elif selected_tab == "SURIGAO CITY":
+    st.sidebar.image("https://example.com/surigao.jpg", caption="Surigao City", use_column_width=True)
+
 # Footnote
-st.markdown("<p style='text-align: center; font-size: 0.8em;'>This bibliography is a personal project created using Streamlit.</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 0.8em; background: linear-gradient(90deg, #FF5733, #33FF57, #3357FF, #FF33A1, #FF5733); -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>This is a project made by me! To be submitted for Programming Logic and Design!</p>", unsafe_allow_html=True)
