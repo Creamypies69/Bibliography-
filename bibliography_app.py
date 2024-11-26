@@ -43,15 +43,14 @@ with st.expander("Personal Details"):
 
 # Brief description
 description = (
-    "Daryl is an 18-year-old college student pursuing a Bachelor of Science in Computer Engineering (BSCpE) at SNSU.\n"
-    "He graduated from DREESMNHS and lives in Surigao City.\n"
-    "An introverted individual, he dreams of building a network of autonomous computers.\n"
-    "In his free time, he enjoys reading and casual gaming.\n"
-    "He has been in a loving relationship with his girlfriend, KC Aspacio, for three years."
+    "Daryl is an 18-year-old college student pursuing a Bachelor of Science in Computer Engineering (BSCpE) at SNSU. "
+    "He graduated from DREESMNHS and lives in Surigao City. An introverted individual, he dreams of building a network "
+    "of autonomous computers. In his free time, he enjoys reading and casual gaming. He has been in a loving relationship "
+    "with his girlfriend, KC Aspacio, for three years."
 )
 
 with st.expander("Brief Description"):
-    st.markdown(f"<pre>{description}</pre>", unsafe_allow_html=True)
+    st.markdown(f"<div style='max-width: 100%; overflow-wrap: break-word;'>{description}</div>", unsafe_allow_html=True)
 
 # Competencies
 competency_list = [
