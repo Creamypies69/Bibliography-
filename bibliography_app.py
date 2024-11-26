@@ -1,37 +1,33 @@
 import streamlit as st
 
-# CSS for gradient effect and styling
+# CSS for styling
 st.markdown("""
     <style>
-        @keyframes gradient {
-            0%, 100% { background-color: #FF5733; }
-            25% { background-color: #33FF57; }
-            50% { background-color: #3357FF; }
-            75% { background-color: #FF33A1; }
+        .header {
+            font-size: 6vw;
+            text-align: center;
+            margin: 20px 0;
         }
-        .gradient-text {
-            animation: gradient 10s ease infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 6vw; text-align: center; margin: 20px 0;
+        .name-box {
+            padding: 10px;
+            border-radius: 10px;
+            color: black;
+            font-size: 2vw;
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
         }
-        .gradient-box {
-            animation: gradient 10s ease infinite;
-            padding: 10px; border-radius: 10px; color: black; 
-            font-size: 2vw; margin-top: 10px; font-weight: bold;
-        }
-        .gradient-separator {
-            border: 2px solid transparent;
-            background-image: linear-gradient(90deg, #FF5733, #33FF57, #3357FF, #FF33A1, #FF5733);
-            background-size: 400% 100%; animation: gradient 10s ease infinite;
-            height: 2px; margin: 0;
+        .separator {
+            border: 2px solid black;
+            height: 2px;
+            margin: 20px 0;
         }
     </style>
-    <h1 class="gradient-text">Daryl's Bibliography</h1>
+    <h1 class="header">Daryl's Bibliography</h1>
 """, unsafe_allow_html=True)
 
 # Separator
-st.markdown("<div class='gradient-separator'></div>", unsafe_allow_html=True)
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Description and Image columns
 desc_col, img_col = st.columns([3, 1])
@@ -52,12 +48,12 @@ with img_col:
     st.markdown(f"""
         <div style='text-align: center; margin: 20px 0;'>
             <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);' width='90%'/>
-            <div class="gradient-box">Daryl E. Sagranada</div>
+            <div class="name-box">Daryl E. Sagranada</div>
         </div>
     """, unsafe_allow_html=True)
 
 # Separator
-st.markdown("<div class='gradient-separator'></div>", unsafe_allow_html=True)
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Personal Details
 details_col, competencies_col = st.columns(2)
@@ -84,19 +80,6 @@ with competencies_col:
         "Programming Languages": "Python, Java, C++",
         "Web Development": "HTML, CSS, JavaScript, Flask",
         "Database Management": "MySQL, SQLite",
-        "Tools": "Git, Visual Studio Code, Jupyter Notebook",
-        "Soft Skills": "Teamwork, Communication, Problem-solving"
-    }
-    with st.expander("Competencies", expanded=True):
-        for key, value in competencies.items():
-            st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
-
-# Simplified Competencies Section
-with competencies_col:
-    competencies = {
-        "Programming Languages": "Python, Java, C++",
-        "Web Development": "HTML, CSS, JavaScript, Flask",
-        "Database Management": "MySQL, SQLite",
         "Tools": "Git, VS Code, Jupyter",
         "Soft Skills": "Teamwork, Communication, Problem-solving"
     }
@@ -104,8 +87,34 @@ with competencies_col:
         for key, value in competencies.items():
             st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
-# Footer with gradient effect
+# Separator
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
+
+# Related Images Section
+st.subheader("Related Images")
+
+# Tabs for related images
+tab_names = ["Daryl", "KC ASPACIO", "DREESMNHS", "SNSU", "SURIGAO CITY"]
+tabs = st.tabs(tab_names)
+
+# Content for each tab
+with tabs[0]:
+    st.image("https://raw.githubusercontent.com/Creamypies69 /Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg", caption="Daryl's Profile Picture")
+
+with tabs[1]:
+    st.image("https://via.placeholder.com/300", caption="KC Aspacio's Profile Picture")
+
+with tabs[2]:
+    st.image("https://via.placeholder.com/300", caption="DREESMNHS Logo")
+
+with tabs[3]:
+    st.image("https://via.placeholder.com/300", caption="SNSU Logo")
+
+with tabs[4]:
+    st.image("https://via.placeholder.com/300", caption="Surigao City Skyline")
+
+# Footer
 st.markdown("""
-    <div class='gradient-separator'></div>
+    <div class='separator'></div>
     <p style='text-align: center; font-size: 1.5vw;'>Programming Logic and Design</p>
 """, unsafe_allow_html=True)
