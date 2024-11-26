@@ -1,14 +1,18 @@
 import streamlit as st
 
-# Title with fixed height and line height for two lines
+# Title
 st.markdown("""
     <h1 style='text-align: center; font-size: 8vw; line-height: 1.2; height: 2.4em; overflow: hidden;'>
         Daryl's Bibliography
     </h1>
 """, unsafe_allow_html=True)
 
-# Separator line
-st.markdown("<hr>", unsafe_allow_html=True)
+# Separator behind everything
+st.markdown("""
+    <div style='position: relative; z-index: -1;'>
+        <hr style='border: 2px solid #5D3FD3; margin: 0;'>
+    </div>
+""", unsafe_allow_html=True)
 
 # Image
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
@@ -50,7 +54,6 @@ with st.expander("Brief Description"):
     st.markdown(f"<pre>{description}</pre>", unsafe_allow_html=True)
 
 # Competencies
-competency_description = "Daryl has developed a range of competencies, including:"
 competency_list = [
     "Proficiency in programming languages: Python, Java, C++.",
     "Understanding of computer networks and systems.",
@@ -63,7 +66,7 @@ competency_list = [
 ]
 
 with st.expander("Competency"):
-    st.markdown(f"<pre>{competency_description}</pre>", unsafe_allow_html=True)
+    st.markdown("<pre>Daryl has developed a range of competencies, including:</pre>", unsafe_allow_html=True)
     st.markdown("<ul>" + "".join(f"<li>{item}</li>" for item in competency_list) + "</ul>", unsafe_allow_html=True)
 
 # Footer note
