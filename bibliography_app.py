@@ -31,15 +31,15 @@ details = {
     "Location": "Narciso Rosales Street, Barangay Taft, Surigao City, Surigao del Norte, Philippines"
 }
 
-# Display personal details
-st.markdown(
-    "<div style='border: 2px solid #5D3FD3; border-radius: 10px; padding: 10px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);'>"
-    "<h3 style='color: #5D3FD3;'>Personal Details</h3>"
-    "<ul style='list-style-type: none; padding: 0;'>" +
-    "".join(f"<li><strong>{k}:</strong> {v}</li>" for k, v in details.items()) +
-    "</ul></div>",
-    unsafe_allow_html=True
-)
+# Display personal details in an expander
+with st.expander("Personal Details", expanded=False):
+    st.markdown(
+        "<div style='border: 2px solid #5D3FD3; border-radius: 10px; padding: 10px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);'>"
+        "<ul style='list-style-type: none; padding: 0;'>" +
+        "".join(f"<li><strong>{k}:</strong> {v}</li>" for k, v in details.items()) +
+        "</ul></div>",
+        unsafe_allow_html=True
+    )
 
 # Brief description
 description = (
@@ -50,11 +50,11 @@ description = (
     "For the past three years, he has been in a loving relationship with his girlfriend, KC Aspacio."
 )
 
-# Display brief description
-st.markdown(
-    "<div style='border: 2px solid #5D3FD3; border-radius: 10px; padding: 10px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);'>"
-    "<h3 style='color: #5D3FD3;'>Brief Description</h3>"
-    f"<pre style='text-align: left;'>{description}</pre>"
-    "</div>",
-    unsafe_allow_html=True
-)
+# Display brief description in an expander
+with st.expander("Brief Description", expanded=False):
+    st.markdown(
+        "<div style='border: 2px solid #5D3FD3; border-radius: 10px; padding: 10px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);'>"
+        f"<pre style='text-align: left;'>{description}</pre>"
+        "</div>",
+        unsafe_allow_html=True
+    )
