@@ -43,7 +43,7 @@ with st.container():
     with col1:
         with st.expander("Personal Details", expanded=True):
             details = {
-                "Age": "18", "Education": "BSCpE", "University": "SNSU",
+                "Age": "18", "Education": "BSCpE", "University ": "SNSU",
                 "High School": "DREESMNHS", "Location": "Surigao City, Philippines",
                 "Phone": "097 04978603", "Email": "daryl.sagranada.6146@gmail.com",
                 "School Email": "dsagranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
@@ -71,17 +71,19 @@ images = {
     "SNSU": ["https://via.placeholder.com/300?text=SNSU+Image+1", "https://via.placeholder.com/300?text=SNSU+Image+2", "https://via.placeholder.com/300?text=SNSU+Image+3"],
     "KC ASPACIO": ["https://via.placeholder.com/300?text=KC+ASPACIO+Image+1", "https://via.placeholder.com/300?text=KC+ASPACIO+Image+2"],
     "DREESMNHS": ["https://via.placeholder.com/300?text=DREESMNHS+Image+1", "https://via.placeholder.com/300?text=DREESMNHS+Image+2", "https://via.placeholder.com/300?text=DREESMNHS+Image+3"],
-    "DARYL": ["https://via.placeholder.com/300?text=DARYL+Image+ 1", "https://via.placeholder.com/300?text=DARYL+Image+2"],
+    "DARYL": ["https://via.placeholder.com/300?text=DARYL+Image+1", "https://via.placeholder.com/300?text=DARYL+Image+2"],
     "SURIGAO CITY": ["https://via.placeholder.com/300?text=SURIGAO+CITY+Image+1", "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+2", "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+3"]
 }
 
-# Display images in tabs
-for tab in tab_names:
-    with st.tab(tab):
+# Creating tabs
+tabs = st.tabs(tab_names)
+
+for i, tab in enumerate(tabs):
+    with tab:
         cols = st.columns(2)
-        for img_url in images[tab]:
+        for img_url in images[tab_names[i]]:
             with cols[0 if len(cols[0].container) % 2 == 0 else 1]:
-                st.image(img_url, caption=f"{tab} Image", use_column_width=True)
+                st.image(img_url, caption=f"{tab_names[i]} Image", use_column_width=True)
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
