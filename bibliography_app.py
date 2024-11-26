@@ -13,7 +13,7 @@ st.markdown("""
             padding: 10px;
             border-radius: 10px;
             color: black;
-            font-size: 2vw;
+            font-size: 4vw;  /* Adjusted font size for better fit */
             margin-top: 10px;
             font-weight: bold;
             text-align: center;
@@ -89,9 +89,6 @@ with competencies_col:
     competencies = {
         "Programming Languages": "Python, Java, C++",
         "Web Development": "HTML, CSS, JavaScript",
-        "Frameworks": "Flask, Django",
-        "Database Management": "MySQL, SQLite",
-        "Version Control": "Git, GitHub",
         "Operating Systems": "Windows, Linux"
     }
     with st.expander("Competencies", expanded=True):
@@ -100,7 +97,7 @@ with competencies_col:
 
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-st.subheader("Related Images")
+st.subheader ("Related Images")
 
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 tabs = st.tabs(tab_names)
