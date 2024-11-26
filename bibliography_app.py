@@ -69,9 +69,9 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 st.subheader("Related Images")
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
-    "SNSU": ["https://via.placeholder.com/300?text=SNSU+Image+1", "https://via.placeholder.com/300?text=SNSU+Image+2", "https://via.placeholder.com/300?text=SNSU+Image+3"],
+    "SNSU": ["https://via.placeholder.com/300?text=SNSU+Image+1", "https://via.placeholder .com/300?text=SNSU+Image+2", "https://via.placeholder.com/300?text=SNSU+Image+3"],
     "KC ASPACIO": ["https://via.placeholder.com/300?text=KC+ASPACIO+Image+1", "https://via.placeholder.com/300?text=KC+ASPACIO+Image+2"],
-    "DREESMNHS ": ["https://via.placeholder.com/300?text=DREESMNHS+Image+1", "https://via.placeholder.com/300?text=DREESMNHS+Image+2", "https://via.placeholder.com/300?text=DREESMNHS+Image+3"],
+    "DREESMNHS": ["https://via.placeholder.com/300?text=DREESMNHS+Image+1", "https://via.placeholder.com/300?text=DREESMNHS+Image+2", "https://via.placeholder.com/300?text=DREESMNHS+Image+3"],
     "DARYL": ["https://via.placeholder.com/300?text=DARYL+Image+1", "https://via.placeholder.com/300?text=DARYL+Image+2"],
     "SURIGAO CITY": ["https://via.placeholder.com/300?text=SURIGAO+CITY+Image+1", "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+2", "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+3"]
 }
@@ -82,14 +82,17 @@ tabs = st.tabs(tab_names)
 for i, tab in enumerate(tabs):
     with tab:
         cols = st.columns(2)
+        col_counters = [0, 0]  # Initialize counters for each column
         for img_url in images[tab_names[i]]:
             # Distributing images across columns
-            if len(cols[0].container) <= len(cols[1].container):
+            if col_counters[0] <= col_counters[1]:
                 with cols[0]:
                     st.image(img_url, caption=f"{tab_names[i]} Image", use_column_width=True)
+                col_counters[0] += 1  # Increment counter for column 1
             else:
                 with cols[1]:
                     st.image(img_url, caption=f"{tab_names[i]} Image", use_column_width=True)
+                col_counters[1] += 1  # Increment counter for column 2
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
