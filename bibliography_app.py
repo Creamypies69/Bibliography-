@@ -75,11 +75,13 @@ images = {
     ]
 }
 
-for tab in tabs:
+# Iterate through tabs and display images
+for i, tab in enumerate(tabs):
     with tab:
-        # Use the tab's name to access the images
-        for img_url in images[tab.name]:  # Corrected this line
-            st.image(img_url, caption=f"{tab.name} Image", use_column_width=True)
+        # Use the index to access the corresponding tab name
+        tab_name = tab_names[i]
+        for img_url in images[tab_name]:
+            st.image(img_url, caption=f"{tab_name} Image", use_column_width=True)
 
 # Footer
 st.markdown("Thank you for visiting Daryl's Bibliography!")
