@@ -1,51 +1,44 @@
 import streamlit as st
-import pandas as pd
 
-# Title of the application
-st.title("Quick Bibliography Manager")
+st.set_page_config(page_title="Single Person Description", page_icon="📚")
 
-# Subtitle
-st.subheader("Add your bibliography entries below:")
+background_color = "#1e1e2f"
+text_color = "#ffffff"
+highlight_color = "#00bcd4"
 
-# Create a form for inputting bibliography entries
-with st.form(key='bibliography_form'):
-    entry_type = st.selectbox("Entry Type", ["Book", "Article", "Website"])
-    author = st.text_input("Author(s)")
-    title = st.text_input("Title")
-    year = st.number_input("Year", min_value=1900, max_value=2023, step=1)
-    publisher = st.text_input("Publisher (if applicable)")
-    url = st.text_input("URL (if applicable)")
-    
-    # Submit button
-    submit_button = st.form_submit_button("Add Entry")
+st.markdown(
+    f"""
+    <style>
+    .reportview-container {{
+        background: {background_color};
+        color: {text_color};
+    }}
+    .sidebar .sidebar-content {{
+        background: {background_color};
+    }}
+    h1, h2, h3, h4, h5, h6 {{
+        color: {highlight_color};
+    }}
+    .stButton > button {{
+        background-color: {highlight_color};
+        color: {text_color};
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-# Initialize or load bibliography
-if 'bibliography' not in st.session_state:
-    st.session_state.bibliography = []
+person_description = {
+    "name": "Alice Smith",
+    "description": "Alice Smith is a dedicated environmental scientist focused on climate change research and sustainable practices."
+}
 
-# Add entry to bibliography if the form is submitted
-if submit_button:
-    entry = {
-        "Entry Type": entry_type,
-        "Author": author,
-        "Title": title,
-        "Year": year,
-        "Publisher": publisher,
-        "URL": url
-    }
-    st.session_state.bibliography.append(entry)
-    st.success("Entry added successfully!")
+st.title("Person Description")
 
-# Display the bibliography
-st.subheader("Your Bibliography Entries:")
-if st.session_state.bibliography:
-    # Create a DataFrame from the bibliography entries
-    bibliography_df = pd.DataFrame(st.session_state.bibliography)
-    st.dataframe(bibliography_df)
-else:
-    st.write("No entries yet. Add some above!")
+st.subheader("Brief Description")
+st.write(f"**Name:** {person_description['name']}")
+st.write(f"**Description:** {person_description['description']}")
+st.write("---")
 
-# Option to clear the bibliography
-if st.button("Clear All Entries"):
-    st.session_state.bibliography.clear()
-    st.success("All entries cleared!")
+if st.button("Refresh"):
+    st.experimental_rerun()
