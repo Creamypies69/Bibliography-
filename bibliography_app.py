@@ -1,57 +1,45 @@
 import streamlit as st
 
-# Set a custom CSS style for dark purple theme
+# Custom CSS for styling
 st.markdown(
     """
     <style>
-    .title {
-        color: #6A0C9A;  /* Dark Purple */
-    }
-    .subheader {
-        color: #6A0C9A;  /* Dark Purple */
-    }
-    .separator {
-        border: 1px solid #6A0C9A;  /* Dark Purple */
-        margin: 10px 0;
+    .title { color: #6A0C9A; }
+    .subheader { color: #6A0C9A; }
+    .separator { border: 1px solid #6A0C9A; margin: 10px 0; }
+    .name-tag {
+        text-align: center; font-size: 24px; color: black;
+        background-color: #E6E6FA; padding: 10px; border-radius: 5px;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Page title
-st.title("Daryl's Bibliography", anchor="title")
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)  # Separator
+# Page title and profile
+st.title("Daryl's Bibliography")
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Profile image and name
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-st.image(profile_image_url, caption="", use_column_width=True)
-
-# Name tag as a text box
-name = st.text_input("Name", "Daryl E. Sagranada", label_visibility="collapsed")
+st.image(profile_image_url, width=300)
+st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)
 
 # Description
 description = (
-    "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a Bachelor of Science in Computer Engineering (BSCpE) at SNSU. "
+    "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
     "He graduated from DREESMNHS and lives in Surigao City. An introverted individual, he dreams of building a network "
     "of autonomous computers. In his free time, he enjoys reading and casual gaming. He has been in a loving relationship "
     "with his girlfriend, KC Aspacio."
 )
 st.markdown(description, unsafe_allow_html=True)
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)  # Separator
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Personal details and competencies
 details = {
-    "Age": "18",
-    "Education": "BSCpE",
-    "University": "SNSU",
-    "High School": "DREESMNHS",
-    "Location": "Surigao City, Philippines",
-    "Phone Number": "097 04978603",
-    "Email": "daryl.sagranada.6146@gmail.com",
-    "School Email": "dsagranada@ssct.edu.ph",
-    "Height": "168 cm",
-    "Weight": "56 kg"
+    "Age": "18", "Education": "BSCpE", "University": "SNSU",
+    "High School": "DREESMNHS", "Location": "Surigao City, Philippines",
+    "Phone Number": "097 04978603", "Email": "daryl.sagranada.6146@gmail.com",
+    "School Email": "dsagranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
 }
 
 competencies = {
@@ -60,57 +48,42 @@ competencies = {
     "Operating Systems": "Windows, Linux"
 }
 
-# Create expanders for Personal Details and Competencies
-with st.expander("Personal Details"):
-    for key, value in details.items():
-        st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+# Create columns for expanders
+col1, col2, col3 = st.columns([2, 1, 2])
 
-with st.expander("Competencies"):
-    for key, value in competencies.items():
-        st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+with col1:
+    with st.expander("Personal Details"):
+        for key, value in details.items():
+            st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)  # Separator
+with col3:
+    with st.expander("Competencies"):
+        for key, value in competencies.items():
+            st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in tabs
 st.subheader("Related Images")
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 tabs = st.tabs(tab_names)
 
-# Define images for each tab
+# Image URLs for each tab
 images = {
-    "SNSU": [
-        "https://via.placeholder.com/300?text=SNSU+Image+1",
-        "https://via.placeholder.com/300?text=SNSU+Image+2",
-        "https://via.placeholder.com/300?text=SNSU+Image+3"
-    ],
-    "KC ASPACIO": [
-        "https://via.placeholder.com/300?text=KC+ASPACIO+Image+1",
-        "https://via.placeholder.com/300?text=KC+ASPACIO+Image+2"
-    ],
-    "DREESMNHS": [
-        "https://via.placeholder.com/300?text=DREESMNHS+Image+1",
-        "https://via.placeholder.com/300?text=DREESMNHS+Image+2",
-        "https://via.placeholder.com/300?text=DREESMNHS+Image+3"
-    ],
-    "DARYL": [
-        "https://via.placeholder.com/300?text=DARYL+Image+1",
-        "https://via.placeholder.com/300?text=DARYL+Image +2"
-    ],
-    "SURIGAO CITY": [
-        "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+1",
-        "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+2",
-        "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+3"
-    ]
+    "SNSU": ["https://via.placeholder.com/300?text=SNSU+Image+1", "https://via.placeholder.com/300?text=SNSU+Image+2", "https://via.placeholder.com/300?text=SNSU+Image+3"],
+    "KC ASPACIO": ["https://via.placeholder.com/300?text=KC+ASPACIO+Image+1", "https://via.placeholder.com/300?text=KC+ASPACIO+Image+2"],
+    "DREESMNHS": ["https://via.placeholder.com/300?text=DREESMNHS+Image+1", "https://via.placeholder.com/300?text=DREESMNHS+Image+2", "https://via.placeholder.com/300?text=DREESMNHS+Image+3"],
+    "DARYL": ["https://via.placeholder.com/300?text=DARYL+Image+1", "https://via.placeholder.com/300?text=DARYL+Image+2"],
+    "SURIGAO CITY": ["https://via.placeholder.com/300?text=SURIGAO+CITY+Image+1", "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+2", "https://via.placeholder.com/300?text=SURIGAO+CITY+Image+3"]
 }
 
 # Display images in tabs
 for i, tab in enumerate(tabs):
     with tab:
-        tab_name = tab_names[i]
-        for img_url in images[tab_name]:
-            st.image(img_url, caption=f"{tab_name} Image", use_column_width=True)
+        for img_url in images[tab_names[i]]:
+            st.image(img_url, caption=f"{tab_names[i]} Image", use_column_width=True)
 
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)  # Separator before the footer
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Footer
 st.markdown("Thank you for visiting Daryl's Bibliography!")
