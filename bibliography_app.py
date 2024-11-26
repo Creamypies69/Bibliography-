@@ -15,9 +15,9 @@ st.markdown(
     <style>
     .reportview-container {{
         background: 
-            linear-gradient(to bottom, rgba(30, 30, 47, 1), rgba(30, 30, 47, 0)), 
             url('{background_image_url}');
         background-size: cover;
+        background-attachment: fixed; /* Keeps the background fixed on scroll */
         color: {text_color};
     }}
     .sidebar .sidebar-content {{
@@ -25,40 +25,63 @@ st.markdown(
     }}
     h1, h2, h3, h4, h5, h6 {{
         color: {highlight_color};
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow effect for title and subtitles */
     }}
     .stButton > button {{
         background-color: {highlight_color};
         color: {text_color};
+    }}
+    .shadow {{
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow effect for elements */
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px 0;
     }}
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Title
-st.title("Daryl's Bibliography")
+# Title with shadow
+st.markdown('<div class="shadow"><h1>Daryl\'s Bibliography</h1></div>', unsafe_allow_html=True)
 
-# Display picture
+# Display picture with shadow
 st.markdown(
     f"""
-    <a href="{link_url}" target="_blank">
-        <img src="{image_url}" alt="Daryl's Image" width="300">
-    </a>
+    <div class="shadow">
+        <a href="{link_url}" target="_blank">
+            <img src="{image_url}" alt="Daryl's Image" width="300">
+        </a>
+    </div>
     """,
     unsafe_allow_html=True
 )
 
-# Subtitle below the picture
-st.subheader("Brief Description")
+# Subtitle with shadow below the picture
+st.markdown('<div class="shadow"><h2>Brief Description</h2></div>', unsafe_allow_html=True)
 
-# Description text
+# Personal details section with shadow
+personal_details = (
+    "<div class='shadow'>"
+    "<h3>Personal Details</h3>"
+    "<p><strong>Age:</strong> 18</p>"
+    "<p><strong>Education:</strong> Bachelor of Science in Computer Engineering (BSCpE)</p>"
+    "<p><strong>University:</strong> Surigao del Norte State University (SNSU)</p>"
+    "<p><strong>High School:</strong> Don Ruben Edera Ecleo Sr. Memorial National High School (DREESMNHS)</p>"
+    "<p><strong>Location:</strong> Barangay Taft, Surigao City, Surigao del Norte, Philippines</p>"
+    "</div>"
+)
+
+# Show personal details with shadow
+st.markdown(personal_details, unsafe_allow_html=True)
+
+# Description text with shadow
 description = (
-    "Daryl is an 18-year-old college student currently pursuing a Bachelor of Science in Computer Engineering (BSCpE) "
-    "at Surigao del Norte State University (SNSU). A proud graduate of Don Ruben Edera Ecleo Sr. Memorial National High School "
-    "(DREESMNHS), he resides on Narciso Rosales Street in Barangay Taft, Surigao City, Surigao del Norte, Philippines. "
+    "<div class='shadow'>"
     "Daryl enjoys spending his free time immersed in books and visual novels, balancing his intellectual pursuits with casual gaming sessions. "
     "For the past three years, he has been in a loving relationship with his girlfriend, KC Aspacio, who shares and supports his laid-back and creative nature."
+    "</div>"
 )
 
 # Show description
-st.markdown(description)
+st.markdown(description, unsafe_allow_html=True)
