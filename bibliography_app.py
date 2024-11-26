@@ -1,13 +1,13 @@
 import streamlit as st
 
-# Title
+# Title with added margin
 st.markdown("""
-    <h1 style='text-align: center; font-size: 8vw; line-height: 1.2; height: 2.4em; overflow: hidden;'>
+    <h1 style='text-align: center; font-size: 8vw; line-height: 1.2; height: 2.4em; margin-bottom: 20px;'>
         Daryl's Bibliography
     </h1>
 """, unsafe_allow_html=True)
 
-# Separator
+# Original Separator with additional margin
 st.markdown("<hr style='border: 2px solid #5D3FD3; margin: 0;'>", unsafe_allow_html=True)
 
 # Image
