@@ -1,8 +1,8 @@
 import streamlit as st
 
-# Title
+# Title aligned to the far left
 st.markdown("""
-    <h1 style='text-align: left; font-size: 4vw; margin-bottom: 20px;'>
+    <h1 style='text-align: left; font-size: 8vw; margin-bottom: 20px;'>
         Daryl's Bibliography
     </h1>
 """, unsafe_allow_html=True)
@@ -12,7 +12,7 @@ st.markdown("<hr style='border: 2px solid #5D3FD3;'>", unsafe_allow_html=True)
 
 # Image
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-st.image(image_url, caption="Daryl's Image", use_column_width='auto', style="border-radius: 5px;")
+st.image(image_url, caption="Daryl's Image", use_column_width='auto', clamp=True)
 
 # Personal details
 details = {
