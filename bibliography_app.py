@@ -7,6 +7,7 @@ st.markdown("""
             font-size: 6vw;
             text-align: center;
             margin: 20px 0;
+            color: lightgreen;  /* Light green color for header */
         }
         .name-box {
             padding: 10px;
@@ -18,10 +19,10 @@ st.markdown("""
             text-align: center;
             width: 80%;  
             display: inline-block; 
-            background-color: rgba(255, 255, 255, 0.8); 
+            background-color: rgba(144, 238, 144, 0.8);  /* Light green background */
         }
         .separator {
-            border: 2px solid black;
+            border: 2px solid lightgreen;  /* Light green separator */
             height: 2px;
             margin: 20px 0;
         }
@@ -38,15 +39,19 @@ st.markdown("""
             text-align: center;
             font-size: 1.5vw;
             margin-top: 20px;
+            color: lightgreen;  /* Light green color for footer */
         }
     </style>
-    <h1 class="header">Daryl's Bibliography Page</h1>
+    <h1 class="header">Daryl's Bibliography</h1>
 """, unsafe_allow_html=True)
+
+# Separator between title and picture
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
 st.markdown(f"""
     <div class="image-container">
-        <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); width: 80%; height: auto;'/>
+        <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); width: 60%; height: auto;'/>  <!-- Resized image -->
         <div class="name-box">Daryl E. Sagranada</div>
     </div>
 """, unsafe_allow_html=True)
