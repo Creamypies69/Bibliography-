@@ -110,4 +110,4 @@ for name in tab_names:
     st.image("https://via.placeholder.com/300", caption=f"{name} Image")
 
 # Footer
-st.mark down("<div class='footer'>Thank you for visiting Daryl's Bibliography!</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Thank you for visiting Daryl's Bibliography!</div>", unsafe_allow_html=True)
