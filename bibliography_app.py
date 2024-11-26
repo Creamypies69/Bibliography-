@@ -7,22 +7,22 @@ st.markdown("""
             font-size: 6vw;
             text-align: center;
             margin: 20px 0;
-            color: lightgreen;  /* Light green color for header */
+            color: lightgreen;
         }
         .name-box {
             padding: 10px;
             border-radius: 10px;
             color: black;
-            font-size: 4vw;  /* Adjusted font size for better fit */
+            font-size: 4vw;
             margin-top: 10px;
             font-weight: bold;
             text-align: center;
-            width: 80%;  
-            display: inline-block; 
-            background-color: rgba(144, 238, 144, 0.8);  /* Light green background */
+            width: 80%;
+            display: inline-block;
+            background-color: rgba(144, 238, 144, 0.8);
         }
         .separator {
-            border: 2px solid lightgreen;  /* Light green separator */
+            border: 2px solid lightgreen;
             height: 2px;
             margin: 20px 0;
         }
@@ -39,23 +39,26 @@ st.markdown("""
             text-align: center;
             font-size: 1.5vw;
             margin-top: 20px;
-            color: lightgreen;  /* Light green color for footer */
+            color: lightgreen;
         }
     </style>
     <h1 class="header">Daryl's Bibliography</h1>
 """, unsafe_allow_html=True)
 
-# Separator between title and picture
+# Separators
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
+# Profile image and name
 image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
 st.markdown(f"""
     <div class="image-container">
-        <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); width: 60%; height: auto;'/>  <!-- Resized image -->
+        <img src='{image_url}' style='border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); width: 60%; height: auto;'/>
         <div class="name-box">Daryl E. Sagranada</div>
     </div>
 """, unsafe_allow_html=True)
 
+# Description
 description = (
     "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a Bachelor of Science in Computer Engineering (BSCpE) at SNSU. "
     "He graduated from DREESMNHS and lives in Surigao City. An introverted individual, he dreams of building a network "
@@ -66,13 +69,14 @@ st.markdown(f"<p class='description'>{description}</p>", unsafe_allow_html=True)
 
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
+# Personal details and competencies
 details_col, competencies_col = st.columns(2)
 
 with details_col:
     details = {
         "Age": "18",
-        "Education": "Bachelor of Science in Computer Engineering (BSCpE)",
-        "University": "Surigao del Norte State University (SNSU)",
+        "Education": "BSCpE",
+        "University": "SNSU",
         "High School": "DREESMNHS",
         "Location": "Surigao City, Philippines",
         "Phone Number": "097 04978603",
@@ -97,24 +101,13 @@ with competencies_col:
 
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-st.subheader ("Related Images")
-
+# Related images
+st.subheader("Related Images")
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 tabs = st.tabs(tab_names)
 
-with tabs[0]:
-    st.image("https://via.placeholder.com/300", caption="SNSU Logo")
+for name in tab_names:
+    st.image("https://via.placeholder.com/300", caption=f"{name} Image")
 
-with tabs[1]:
-    st.image("https://via.placeholder.com/300", caption="KC Aspacio's Profile Picture ")
-
-with tabs[2]:
-    st.image("https://via.placeholder.com/300", caption="DREESMNHS Logo")
-
-with tabs[3]:
-    st.image("https://via.placeholder.com/300", caption="Daryl's Profile Picture")
-
-with tabs[4]:
-    st.image("https://via.placeholder.com/300", caption="Surigao City View")
-
-st.markdown("<div class='footer'>Thank you for visiting Daryl's Bibliography!</div>", unsafe_allow_html=True)
+# Footer
+st.mark down("<div class='footer'>Thank you for visiting Daryl's Bibliography!</div>", unsafe_allow_html=True)
