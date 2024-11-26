@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Single Person Description", page_icon="📚")
+st.set_page_config(page_title="Daryl's Bibliography ", page_icon="📚")
 
 background_color = "#1e1e2f"
 text_color = "#ffffff"
@@ -29,11 +29,12 @@ st.markdown(
 )
 
 person_description = {
-    "name": "Alice Smith",
-    "description": "Alice Smith is a dedicated environmental scientist focused on climate change research and sustainable practices."
+    "name": "Daryl Escaño Sagranada",
+    "description": "Daryl is an 18-year-old college student currently pursuing a Bachelor of Science in Computer Engineering (BSCpE) at Surigao del Norte State University (SNSU). A proud graduate of Don Ruben Edera Ecleo Sr. Memorial National High School (DREESMNHS), he resides on Narciso Rosales Street in Barangay Taft, Surigao City, Surigao del Norte, Philippines. Daryl enjoys spending his free time immersed in books and visual novels, balancing his intellectual pursuits with casual gaming sessions. For the past three years, he has been in a loving relationship with his girlfriend, KC Aspacio, who shares and supports his laid-back and creative nature.
+
 }
 
-st.title("Person Description")
+st.title("Daryl's Bibliography")
 
 st.subheader("Brief Description")
 st.write(f"**Name:** {person_description['name']}")
