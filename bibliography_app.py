@@ -13,7 +13,7 @@ description = (
     "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a Bachelor of Science in Computer Engineering (BSCpE) at SNSU. "
     "He graduated from DREESMNHS and lives in Surigao City. An introverted individual, he dreams of building a network "
     "of autonomous computers. In his free time, he enjoys reading and casual gaming. He has been in a loving relationship "
-    "with his girlfriend, KC Aspacio, for three years."
+    "with his girlfriend, KC Aspacio."
 )
 st.markdown(description, unsafe_allow_html=True)
 st.markdown("---")  # Separator line after the description
@@ -31,11 +31,6 @@ details = {
     "Height": "168 cm",
     "Weight": "56 kg"
 }
-with st.expander("Personal Details"):
-    for key, value in details.items():
-        st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
-
-st.markdown("---")  # Separator line after personal details
 
 # Competencies
 competencies = {
@@ -43,11 +38,21 @@ competencies = {
     "Web Development": "HTML, CSS, JavaScript",
     "Operating Systems": "Windows, Linux"
 }
-with st.expander("Competencies"):
+
+# Create two columns for Personal Details and Competencies
+col1, col2 = st.columns(2)
+
+with col1:
+    st.subheader("Personal Details")
+    for key, value in details.items():
+        st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+
+with col2:
+    st.subheader("Competencies")
     for key, value in competencies.items():
         st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
-st.markdown("---")  # Separator line after competencies
+st.markdown("---")  # Separator line after personal details and competencies
 
 # Related images in tabs
 st.subheader("Related Images")
@@ -87,9 +92,9 @@ for i, tab in enumerate(tabs):
         # Use the index to access the corresponding tab name
         tab_name = tab_names[i]
         for img_url in images[tab_name]:
-            st.image(img_url, caption=f"{tab_name} Image", use_column_width=True)
+            st.image(img _url, caption=f"{tab_name} Image", use_column_width=True)
 
-st .markdown("---")  # Separator line before the footer
+st.markdown("---")  # Separator line before the footer
 
 # Footer
 st.markdown("Thank you for visiting Daryl's Bibliography!")
