@@ -1,39 +1,43 @@
 import streamlit as st
+import random
 
-# Custom CSS for styling
+def random_rgb_color():
+    """Generate a random RGB color."""
+    return f"rgb({random.randint(0, 255)}, {random.randint(0, 255)}, {random.randint(0, 255)})"
+
+# Generate random colors for title and separators
+title_color = random_rgb_color()
+separator_color = random_rgb_color()
+
+# Custom CSS for styling with random colors
 st.markdown(
-    """
+    f"""
     <style>
-    .title { 
-        color: #6A0C9A; 
+    .title {{ 
+        color: {title_color}; 
         text-align: center; 
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    }
-    .separator { 
+    }}
+    .separator {{ 
         border: none; 
         height: 2px; 
-        background-color: #6A0C9A; 
+        background-color: {separator_color}; 
         margin: 10px 0; 
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-    .description { 
+    }}
+    .description {{ 
         font-size: 18px; 
         text-align: center; 
         margin: 0 auto; 
         width: 80%;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    }
-    .footer { 
+    }}
+    .footer {{ 
         text-align: center; 
         margin-top: 20px; 
-        color: #6A0C9A; 
+        color: {title_color}; 
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    }
-    .profile-image { 
-        display: block; 
-        margin: 0 auto; 
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }  
+    }}
     </style>
     """,
     unsafe_allow_html=True
@@ -50,7 +54,7 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Centered profile picture
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-st.image(profile_image_url, width=300, caption="Daryl E. Sagranada")  # Slightly larger profile picture
+st.image(profile_image_url, width=300, caption="Daryl E. Sagranada")
 
 # Separator below the profile picture
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -97,43 +101,23 @@ with st.container():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
 # Separator
-st.markdown("<div class='separator'></ html=True)
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in an expander
 with st.expander("Related Images", expanded=True):
-    tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
-    images = {
-        "SNSU": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
-        ],
-        "KC ASPACIO": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240601_131821_393.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240519_133040_233.jpg"
-        ],
-        "DREESMNHS": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745650378.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745687514.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745831902.jpg"
-        ],
-        "DARYL": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1700642274650.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20231226_140425_064.jpg"
-        ],
-        "SURIGAO CITY": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745851002.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images.jpeg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images%20(1).jpeg"
-        ]
-    }
+    tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY "]
+    tab_images = [
+        "https://example.com/snsu.jpg",
+        "https://example.com/kc.jpg",
+        "https://example.com/dreesmnhs.jpg",
+        "https://example.com/daryl.jpg",
+        "https://example.com/surigao.jpg"
+    ]
 
     tabs = st.tabs(tab_names)
-
-    for tab_name in tab_names:
-        with tabs[tab_names.index(tab_name)]:
-            for image_url in images[tab_name]:
-                st.image(image_url, use_column_width=True, caption=tab_name)
+    for tab, image in zip(tabs, tab_images):
+        with tab:
+            st.image(image, caption=tab)
 
 # Footer
-st.markdown("<div class='footer'>Bibliography project for submission to <strong>Programming Logic and Design</strong></div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Thank you for visiting my bibliography!</div>", unsafe_allow_html=True)
