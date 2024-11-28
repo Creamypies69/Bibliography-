@@ -24,18 +24,6 @@ st.markdown(
         color: #6A0C9A; 
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     }
-    .navy-button {
-        background-color: #001f3f;  /* Dark navy blue */
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-    .navy-button:hover {
-        background-color: #003366;  /* Lighter navy blue on hover */
-    }
     </style>
     """,
     unsafe_allow_html=True
@@ -108,7 +96,7 @@ with st.expander("Related Images", expanded=False):
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
         ],
         "KC ASPACIO": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240601_131821_393.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/ IMG_20240601_131821_393.jpg",
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240519_133040_233.jpg"
         ],
         "DREESMNHS": [
@@ -138,16 +126,11 @@ with st.expander("Related Images", expanded=False):
 # Separator below Related Images
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
+# Refresh button positioned above the footer
+if st.button("Refresh"):
+    st.experimental_rerun()
+
 # Footer section
 st.markdown("<div class='footer'>"
             "This is a project Bibliography by Daryl! To be submitted for <strong>Programming Logic and Design</strong>"
             "</div>", unsafe_allow_html=True)
-
-# Refresh button positioned to the left corner
-col1, col2 = st.columns([1, 1])
-with col1:
-    if st.button("Refresh"):
-        st.experimental_rerun()
-with col2:
-    if st.button("GitHub"):
-        st.markdown("<script>window.open('https://g4sebr7wlknj2tu3kz9jpj.streamlit.app/', '_blank');</script>", unsafe_allow_html=True)
