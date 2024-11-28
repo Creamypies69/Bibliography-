@@ -4,87 +4,46 @@ import streamlit as st
 st.markdown(
     """
     <style>
-    .title { 
-        color: #6A0C9A; 
-        text-align: center; 
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    }
-    .separator { 
-        border: 1px solid #6A0C9A; 
-        margin: 10px 0; 
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
+    .title { color: #6A0C9A; text-align: center; }
+    .separator { border: 1px solid #6A0C9A; margin: 10px 0; }
     .name-tag {
-        text-align: center; 
-        font-size: 20px; 
-        color: black;  
-        background-color: #E6E6FA; 
-        padding: 10px; 
-        border-radius: 5px; 
-        width: 200px;  
-        margin: 10px auto;  
-        font-weight: bold;  
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        text-align: center; font-size: 20px; color: black;  
+        background-color: #E6E6FA; padding: 10px; border-radius: 5px; width: 250px; margin: 0 auto;  
+        font-weight: bold;  /* Make the name tag bold */
     }
     .description { 
         font-size: 18px; 
         text-align: center; 
-        width: 80%; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        height: 100%;
-    }
-    .footer { 
-        text-align: center; 
-        margin-top: 20px; 
-        color: #6A0C9A; 
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    }
-    .profile-image { 
-        display: block; 
         margin: 0 auto; 
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
-        max-width: 100%; 
-        height: auto; 
-    }  
-    .margin-line {
-        border-left: 2px solid #6A0C9A; 
-        border-right: 2px solid #6A0C9A; 
-        padding: 0 20px; 
-        margin: 0 auto; 
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        width: 80%; /* Set a width for the description to keep it in block format */
     }
+    .footer { text-align: center; margin-top: 20px; color: #6A0C9A; }
+    .profile-image { display: block; margin: 0 auto; }  
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Title and separator
+# Page title and separator
 st.title("Daryl's Bibliography")
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Margin lines and content layout
-with st.container():
-    st.markdown("<div class='margin-line'>", unsafe_allow_html=True)
+# Create columns for description, name tag, and profile picture
+col1, col2 = st.columns([2, 1])  # Adjust the ratio as needed
 
-    col1, col2 = st.columns([2, 1])  # Adjust column ratio
+# Description in the first column
+with col1:
+    st.markdown("<div class='description'>"
+                "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
+                "He graduated from DREESMNHS and lives in Surigao City. He dreams of building a network of autonomous computers. "
+                "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
+                "</div>", unsafe_allow_html=True)  # Description
 
-    # Description
-    with col1:
-        st.markdown("<div class='description'>"
-                    "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
-                    "He graduated from DREESMNHS and lives in Surigao City. He dreams of building a network of autonomous computers. "
-                    "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
-                    "</div>", unsafe_allow_html=True)
-
-    # Profile picture and name tag
-    with col2:
-        profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/202411%2021_151401.jpg"
-        st.image(profile_image_url, width=150)
-        st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)
-
-    st.markdown("</div>", unsafe_allow_html=True)  # Close margin line
+# Profile section with centered layout in the second column
+with col2:
+    profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
+    st.image(profile_image_url, width=150, use_column_width=False)  # Set width to 150 pixels
+    st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)  # Name tag
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -99,7 +58,7 @@ with st.container():
                 "Age": "18", "Education": "BSCpE", "University": "SNSU",
                 "High School": "DREESMNHS", "Location": "Surigao City, Philippines",
                 "Phone": "097 04978603", "Email": "daryl.sagranada.6146@gmail.com",
-                "School Email": "dsagranada@ssct.edu.ph", " "Height": "168 cm", "Weight": "56 kg"
+                "School Email": "dsagranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
             }
             for key, value in details.items():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
@@ -123,7 +82,7 @@ tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
     "SNSU": [
         "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads /main/1732745734282.jpg",
         "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
     ],
     "KC ASPACIO": [
