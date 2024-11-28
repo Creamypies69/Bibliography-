@@ -7,12 +7,12 @@ st.markdown(
     .title { color: #6A0C9A; text-align: center; }
     .separator { border: 1px solid #6A0C9A; margin: 10px 0; }
     .name-tag {
-        text-align: center; font-size: 20px; color: black;  /* Adjusted font size */
-        background-color: #E6E6FA; padding: 10px; border-radius: 5px; width: 250px; margin: 0 auto;  /* Adjusted width */
+        text-align: center; font-size: 20px; color: black;  
+        background-color: #E6E6FA; padding: 10px; border-radius: 5px; width: 250px; margin: 0 auto;  
     }
     .description { font-size: 18px; text-align: center; }
     .footer { text-align: center; margin-top: 20px; color: #6A0C9A; }
-    .profile-image { display: block; margin: 0 auto; }  /* Center the image */
+    .profile-image { display: block; margin: 0 auto; }  
     </style>
     """,
     unsafe_allow_html=True
@@ -74,33 +74,35 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 st.subheader("Related Images")
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
-    "SNSU": ["https://via.placeholder.com/250?text=SNSU+Image+1", "https://via.placeholder.com/250?text=SNSU+Image+2", "https://via.placeholder.com/250?text=SNSU+Image +3"],
-    "KC ASPACIO": ["https://via.placeholder.com/250?text=KC+ASPACIO+Image+1", "https://via.placeholder.com/250?text=KC+ASPACIO+Image+2"],
-    "DREESMNHS": ["https://via.placeholder.com/250?text=DREESMNHS+Image+1", "https://via.placeholder.com/250?text=DREESMNHS+Image+2", "https://via.placeholder.com/250?text=DREESMNHS+Image+3"],
-    "DARYL": ["https://via.placeholder.com/250?text=DARYL+Image+1", "https://via.placeholder.com/250?text=DARYL+Image+2"],
-    "SURIGAO CITY": ["https://via.placeholder.com/250?text=SURIGAO+CITY+Image+1", "https://via.placeholder.com/250?text=SURIGAO+CITY+Image+2", "https://via.placeholder.com/250?text=SURIGAO+CITY+Image+3"]
+    "SNSU": [
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/snsu1.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/snsu2.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/snsu3.jpg"
+    ],
+    "KC ASPACIO": [
+        "https://raw.githubusercontent.com /Creamypies69/Bibliography-/refs/heads/main/kc_asapcio.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/kc2.jpg"
+    ],
+    "DREESMNHS": [
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/dreesmnhs1.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/dreesmnhs2.jpg"
+    ],
+    "DARYL": [
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/daryl1.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/daryl2.jpg"
+    ],
+    "SURIGAO CITY": [
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/surigao1.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/surigao2.jpg"
+    ]
 }
 
-# Creating tabs
 tabs = st.tabs(tab_names)
 
-for i, tab in enumerate(tabs):
-    with tab:
-        cols = st.columns(2)
-        col_counters = [0, 0]  # Initialize counters for each column
-        for img_url in images[tab_names[i]]:
-            # Distributing images across columns
-            if col_counters[0] <= col_counters[1]:
-                with cols[0]:
-                    st.image(img_url, caption=f"{tab_names[i]} Image", use_column_width=True)
-                col_counters[0] += 1  # Increment counter for column 1
-            else:
-                with cols[1]:
-                    st.image(img_url, caption=f"{tab_names[i]} Image", use_column_width=True)
-                col_counters[1] += 1  # Increment counter for column 2
-
-# Separator
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
+for tab_name in tab_names:
+    with tabs[tab_names.index(tab_name)]:
+        for image_url in images[tab_name]:
+            st.image(image_url, use_column_width=True)
 
 # Footer
-st.markdown("<div class='footer'>Thank you for visiting Daryl's Bibliography!</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Created by Daryl E. Sagranada</div>", unsafe_allow_html=True)
