@@ -97,11 +97,11 @@ with st.container():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
 # Separator
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
+st.markdown("<div class='separator'></ html=True)
 
 # Related images in an expander
 with st.expander("Related Images", expanded=True):
-    tab _names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
+    tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
     images = {
         "SNSU": [
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
