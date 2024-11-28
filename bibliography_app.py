@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Custom CSS for styling 
+# Custom CSS for styling
 st.markdown(
     """
     <style>
@@ -34,6 +34,18 @@ st.markdown(
         margin: 0 auto; 
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }  
+    .navy-button {
+        background-color: #001f3f;  /* Dark navy blue */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .navy-button:hover {
+        background-color: #003366;  /* Lighter navy blue on hover */
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -144,5 +156,10 @@ st.markdown("<div class='footer'>"
             "</div>", unsafe_allow_html=True)
 
 # Refresh button positioned to the left corner
-if st.button("Refresh"):
-    st.experimental_rerun()
+col1, col2 = st.columns([1, 1])
+with col1:
+    if st.button("Refresh"):
+        st.experimental_rerun()
+with col2:
+    if st.button("GitHub", key="github_button", help="Go to GitHub page", css_class="navy-button"):
+        st.markdown("<script>window.open('https://g4sebr7wlknj2tu3kz9jpj.streamlit.app/', '_blank');</script>", unsafe_allow_html=True)
