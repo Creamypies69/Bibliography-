@@ -80,7 +80,7 @@ images = {
         "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
     ],
     "KC ASPACIO": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/ heads/main/IMG_20240601_131821_393.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography -/refs/heads/main/IMG_20240601_131821_393.jpg",
         "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240519_133040_233.jpg"
     ],
     "DREESMNHS": [
