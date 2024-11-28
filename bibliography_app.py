@@ -41,11 +41,6 @@ st.markdown(
         border-radius: 10px;
         padding: 15px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s;
-    }
-    .card:hover {
-        transform: scale(1.02);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     .tab-title {
         font-size: 20px;
@@ -54,11 +49,10 @@ st.markdown(
         margin: 10px 0;
     }
     .expander {
-        transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        transition: background-color 0.3s ease;
     }
-    .expander:focus-within {
-        box-shadow: 0 0 10px rgba(106, 12, 154, 0.8); /* Glow effect */
-        background-color: rgba(106, 12, 154, 0.1); /* Light background on focus */
+    .stExpander[aria-expanded="true"] {
+        background-color: rgba(106, 12, 154, 0.1); /* Change color when expanded */
     }
     </style>
     """,
@@ -72,7 +66,7 @@ st.title("Daryl's Bibliography 📚")
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Profile picture
-profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc 87b1793304ddacbe4f634c/20241121_151401.jpg"
+profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
 st.markdown(f"<div style='text-align: center;'><img src='{profile_image_url}' width='300' class='profile-image' alt='Daryl E. Sagranada' /></div>", unsafe_allow_html=True)
 
 # Separator
@@ -108,7 +102,7 @@ with st.container():
                 "Weight": "56 kg"
             }
             for key, value in details.items():
-                st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+                st.markdown(f"<strong>{ key}:</strong> {value}", unsafe_allow_html=True)
             st.markdown("</div>", unsafe_allow_html=True)
 
     with col2:
@@ -150,7 +144,7 @@ with st.expander("Related Images", expanded=False):
         ],
         "SURIGAO CITY": [
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745851002.jpg",
-            "https://raw.githubusercontent.com/Creamyp ies69/Bibliography-/refs/heads/main/images.jpeg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images.jpeg",
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images%20(1).jpeg"
         ]
     }
