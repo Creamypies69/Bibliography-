@@ -39,16 +39,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Top separator
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
-
 # Page title
 st.title("Daryl's Bibliography")
 
-# Another separator below the title
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
-
-# Profile picture with separator above
+# Top separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Centered profile picture
@@ -73,7 +67,7 @@ with st.container():
     col1, col2 = st.columns(2)
 
     with col1:
-        with st.expander("Personal Details", expanded=True):
+        with st.expander("Personal Details", expanded=False):  # Set to False to keep it closed on refresh
             details = {
                 "Age": "18", 
                 "Education": "BSCpE", 
@@ -90,24 +84,24 @@ with st.container():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
     with col2:
-        with st.expander("Competencies", expanded=True):
+        with st.expander("Competencies", expanded=False):  # Set to False to keep it closed on refresh
             competencies = {
                 "Languages": "Python, Java, C++",
                 "Web Development": "HTML, CSS, JavaScript",
                 "Operating Systems": "Windows, Linux"
             }
             for key, value in competencies.items():
-                st.markdown(f"<strong>{key}:</ strong> {value}", unsafe_allow_html=True)
+                st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in an expander
-with st.expander("Related Images", expanded=True):
-    tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
+with st.expander("Related Images", expanded=False):  # Set to False to keep it closed on refresh
+    tab_names = ["SNSU ", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
     images = {
         "SNSU": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/173274572 7339.jpg",
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
         ],
@@ -137,6 +131,9 @@ with st.expander("Related Images", expanded=True):
         with tabs[tab_names.index(tab_name)]:
             for image_url in images[tab_name]:
                 st.image(image_url, use_column_width=True, caption=tab_name)
+
+# Separator below the related images expander
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Footer
 st.markdown("<div class='footer'>Bibliography project for submission to <strong>Programming Logic and Design</strong></div>", unsafe_allow_html=True)
