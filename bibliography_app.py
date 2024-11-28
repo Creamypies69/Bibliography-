@@ -18,16 +18,18 @@ st.markdown(
     .description { 
         font-size: 18px; 
         text-align: center; 
+        margin: 0 auto; 
         width: 80%;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         background-color: rgba(255, 255, 255, 0.8);
         border-radius: 10px;
         padding: 20px;
-        margin: 0 auto;
     }
     .footer { 
         text-align: center; 
         margin-top: 20px; 
         color: #6A0C9A; 
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     }
     .profile-image {
         border: 5px solid #6A0C9A;
@@ -39,14 +41,17 @@ st.markdown(
         padding: 15px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    .hover-effect {
-        transition: background-color 0.3s, color 0.3s;
-        padding: 5px;
+    .tab-title {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px 0;
     }
-    .hover-effect:hover {
-        background-color: rgba(106, 12, 154, 0.2);
-        color: white;
-        border-radius: 5px;
+    .expander {
+        transition: background-color 0.3s ease;
+    }
+    .stExpander[aria-expanded="true"] {
+        background-color: rgba(106, 12, 154, 0.1); /* Change color when expanded */
     }
     </style>
     """,
@@ -56,9 +61,15 @@ st.markdown(
 # Page title
 st.title("Daryl's Bibliography 📚")
 
+# Separator
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
+
 # Profile picture
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/20240304_132422.jpg"
-st.image(profile_image_url, width=300, caption='Daryl E. Sagranada', use_column_width=True)
+st.markdown(f"<div style='text-align: center;'><img src='{profile_image_url}' width='300' class='profile-image' alt='Daryl E. Sagranada' /></div>", unsafe_allow_html=True)
+
+# Separator
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Description
 st.markdown("<div class='description'>"
@@ -67,13 +78,15 @@ st.markdown("<div class='description'>"
             "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
             "</div>", unsafe_allow_html=True)
 
+# Separator
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
+
 # Personal details and competencies
 with st.container():
     col1, col2 = st.columns(2)
 
-    # Personal Details Expander
     with col1:
-        with st.expander("Personal Details"):
+        with st.expander("Personal Details", expanded=False):
             st.markdown("<div class='card'>", unsafe_allow_html=True)
             details = {
                 "Age": "18", 
@@ -88,12 +101,11 @@ with st.container():
                 "Weight": "56 kg"
             }
             for key, value in details.items():
-                st.markdown(f"<p class='hover-effect'><strong>{key}:</strong> {value}</p>", unsafe_allow_html=True)
+                st.markdown(f"<strong>{ key}:</strong> {value}", unsafe_allow_html=True)
             st.markdown("</div>", unsafe_allow_html=True)
 
-    # Competencies Expander
     with col2:
-        with st.expander("Competencies"):
+        with st.expander("Competencies", expanded=False):
             st.markdown("<div class='card'>", unsafe_allow_html=True)
             competencies = {
                 "Languages": "Python, Java, C++",
@@ -101,12 +113,15 @@ with st.container():
                 "Operating Systems": "Windows, Linux"
             }
             for key, value in competencies.items():
-                st.markdown(f"<p class='hover-effect'><strong>{key}:</strong> {value}</p>", unsafe_allow_html=True)
+                st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
             st.markdown("</div>", unsafe_allow_html=True)
 
+# Separator
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
+
 # Related images
-with st.expander("Related Images"):
-    tab_names = ["SNSU", " KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
+with st.expander("Related Images", expanded=False):
+    tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
     images = {
         "SNSU": [
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
@@ -136,10 +151,14 @@ with st.expander("Related Images"):
     tabs = st.tabs(tab_names)
 
     for tab_name in tab_names:
-        with tabs[tab_names.index(tab_name)]:
-            st.markdown(f"<div class='tab-title'>{tab_name}</div>", unsafe_allow_html=True)
-            for image_url in images[tab_name]:
-                st.image(image_url, use_column_width=True, caption=tab_name)
+        if tab_name in images:
+            with tabs[tab_names.index(tab_name)]:
+                st.markdown(f"<div class='tab-title'>{tab_name}</div>", unsafe_allow_html=True)
+                for image_url in images[tab_name]:
+                    st.image(image_url, use_column_width=True, caption=tab_name)
+
+# Separator below Related Images
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Footer section
 st.markdown("<div class='footer'>"
