@@ -39,28 +39,29 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Page title and separator
+# Page title
 st.title("Daryl's Bibliography")
+
+# Top separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Columns for description and profile picture
-col1, col2 = st.columns([2, 1])
+# Centered description
+st.markdown("<div class='description'>"
+            "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
+            "He graduated from DREESMNHS and lives in Surigao City. He dreams of building a network of autonomous computers. "
+            "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
+            "</div>", unsafe_allow_html=True)
 
-# Description in the first column
-with col1:
-    st.markdown("<div class='description'>"
-                "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
-                "He graduated from DREESMNHS and lives in Surigao City. He dreams of building a network of autonomous computers. "
-                "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
-                "</div>", unsafe_allow_html=True)
+# Bottom separator
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
+
+# Columns for profile picture
+col1, col2 = st.columns([2, 1])
 
 # Profile picture in the second column
 with col2:
     profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
     st.image(profile_image_url, width=250, caption="Daryl E. Sagranada")  # Larger profile picture
-
-# Separator
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Expanders for personal details and competencies
 with st.container():
@@ -101,8 +102,8 @@ st.subheader("Related Images")
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
     "SNSU": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
-        "https://raw .githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
+        "https://raw.githubusercontent .com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
         "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
     ],
     "KC ASPACIO": [
