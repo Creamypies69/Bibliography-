@@ -24,10 +24,10 @@ st.markdown(
         padding: 10px; 
         border-radius: 5px; 
         width: 150px;  /* Width matches profile picture */
-        margin: 0 auto;  
+        margin: 10px auto;  /* Centering and spacing */
         font-weight: bold;  
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        white-space: nowrap;  /* Prevent text from wrapping to the next line */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow */
+        white-space: nowrap;  /* Prevent text from wrapping */
         overflow: hidden;      /* Hide overflow if it exceeds the width */
         text-overflow: ellipsis; /* Add ellipsis if text overflows */
     }
@@ -37,12 +37,14 @@ st.markdown(
         margin: 0 auto; 
         width: 80%;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow */
     }
     .footer { 
         text-align: center; 
         margin-top: 20px; 
         color: #6A0C9A; 
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow */
     }
     .profile-image { 
         display: block; 
@@ -73,7 +75,7 @@ with col1:
 with col2:
     profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
     st.image(profile_image_url, width=150)  # Removed caption
-    st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)
+    st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)  # Full text displayed
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -88,7 +90,7 @@ with st.container():
                 "Age": "18", 
                 "Education": "BSCpE", 
                 "University": "SNSU",
-                "High School": "DREESMNHS", 
+                "High School": "DREESMNHS ", 
                 "Location": "Surigao City, Philippines",
                 "Phone": "097 04978603", 
                 "Email": "daryl.sagranada.6146@gmail.com",
