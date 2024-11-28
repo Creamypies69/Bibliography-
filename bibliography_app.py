@@ -47,7 +47,7 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Centered profile picture
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-st.image(profile_image_url, width=300, caption="Daryl E. Sagranada")
+st.markdown(f"<div style='text-align: center;'><img src='{profile_image_url}' width='300' alt='Daryl E. Sagranada' /></div>", unsafe_allow_html=True)
 
 # Separator below the profile picture
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -97,8 +97,8 @@ with st.container():
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in an expander
-with st.expander("Related Images", expanded=False):  # Set to False to keep it closed on refresh
-    tab_names = ["SNSU", "KC ASPACIO", "DREESMN HS", "DARYL", "SURIGAO CITY"]
+with st.expander("Related Images ", expanded=False):  # Set to False to keep it closed on refresh
+    tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
     images = {
         "SNSU": [
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
