@@ -42,32 +42,32 @@ st.markdown(
 # Page title
 st.title("Daryl's Bibliography 📚")
 
-# Top separator
+# Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Centered profile picture
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
 st.markdown(f"<div style='text-align: center;'><img src='{profile_image_url}' width='300' alt='Daryl E. Sagranada' /></div>", unsafe_allow_html=True)
 
-# Separator below the profile picture
+# Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Centered description
+# Description
 st.markdown("<div class='description'>"
             "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
             "He graduated from DREESMNHS and lives in Surigao City. He dreams of building a network of autonomous computers. "
             "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
             "</div>", unsafe_allow_html=True)
 
-# Bottom separator
+# Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Expanders for personal details and competencies
+# Personal details and competencies
 with st.container():
     col1, col2 = st.columns(2)
 
     with col1:
-        with st.expander("Personal Details", expanded=False):  # Set to False to keep it closed on refresh
+        with st.expander("Personal Details", expanded=False):
             details = {
                 "Age": "18", 
                 "Education": "BSCpE", 
@@ -84,7 +84,7 @@ with st.container():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
     with col2:
-        with st.expander("Competencies", expanded=False):  # Set to False to keep it closed on refresh
+        with st.expander("Competencies", expanded=False):
             competencies = {
                 "Languages": "Python, Java, C++",
                 "Web Development": "HTML, CSS, JavaScript",
@@ -96,12 +96,12 @@ with st.container():
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Related images in an expander
-with st.expander("Related Images ", expanded=False):  # Set to False to keep it closed on refresh
+# Related images
+with st.expander("Related Images", expanded=False):
     tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
     images = {
         "SNSU": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads /main/1732745727339.jpg",
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
         ],
@@ -128,12 +128,15 @@ with st.expander("Related Images ", expanded=False):  # Set to False to keep it 
     tabs = st.tabs(tab_names)
 
     for tab_name in tab_names:
-        if tab_name in images:  # Check if tab_name exists in images dictionary
+        if tab_name in images:
             with tabs[tab_names.index(tab_name)]:
                 for image_url in images[tab_name]:
                     st.image(image_url, use_column_width=True, caption=tab_name)
         else:
             st.error(f"Error: No images found for {tab_name}")
+
+# Separator below Related Images
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Footer section
 st.markdown("<div class='footer'>"
