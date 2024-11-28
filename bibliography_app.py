@@ -45,6 +45,16 @@ st.title("Daryl's Bibliography")
 # Top separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
+# Profile picture with separator above
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
+
+# Centered profile picture
+profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
+st.image(profile_image_url, width=300, caption="Daryl E. Sagranada")  # Slightly larger profile picture
+
+# Separator below the profile picture
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
+
 # Centered description
 st.markdown("<div class='description'>"
             "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
@@ -54,14 +64,6 @@ st.markdown("<div class='description'>"
 
 # Bottom separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
-
-# Columns for profile picture
-col1, col2 = st.columns([2, 1])
-
-# Profile picture in the second column
-with col2:
-    profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-    st.image(profile_image_url, width=250, caption="Daryl E. Sagranada")  # Larger profile picture
 
 # Expanders for personal details and competencies
 with st.container():
@@ -97,41 +99,41 @@ with st.container():
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Related images in tabs
-st.subheader("Related Images")
-tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
-images = {
-    "SNSU": [
-        "https://raw.githubusercontent .com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
-    ],
-    "KC ASPACIO": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240601_131821_393.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240519_133040_233.jpg"
-    ],
-    "DREESMNHS": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745650378.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745687514.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745831902.jpg"
-    ],
-    "DARYL": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1700642274650.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20231226_140425_064.jpg"
-    ],
-    "SURIGAO CITY": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745851002.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images.jpeg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images%20(1).jpeg"
-    ]
-}
+# Related images in an expander
+with st.expander("Related Images", expanded=True):
+    tab _names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
+    images = {
+        "SNSU": [
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
+        ],
+        "KC ASPACIO": [
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240601_131821_393.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240519_133040_233.jpg"
+        ],
+        "DREESMNHS": [
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745650378.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745687514.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745831902.jpg"
+        ],
+        "DARYL": [
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1700642274650.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20231226_140425_064.jpg"
+        ],
+        "SURIGAO CITY": [
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745851002.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images.jpeg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images%20(1).jpeg"
+        ]
+    }
 
-tabs = st.tabs(tab_names)
+    tabs = st.tabs(tab_names)
 
-for tab_name in tab_names:
-    with tabs[tab_names.index(tab_name)]:
-        for image_url in images[tab_name]:
-            st.image(image_url, use_column_width=True, caption=tab_name)
+    for tab_name in tab_names:
+        with tabs[tab_names.index(tab_name)]:
+            for image_url in images[tab_name]:
+                st.image(image_url, use_column_width=True, caption=tab_name)
 
 # Footer
 st.markdown("<div class='footer'>Bibliography project for submission to <strong>Programming Logic and Design</strong></div>", unsafe_allow_html=True)
