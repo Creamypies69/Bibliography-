@@ -7,12 +7,12 @@ st.markdown(
     .title { 
         color: #6A0C9A; 
         text-align: center; 
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Soft drop shadow for the title */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     }
     .separator { 
         border: 1px solid #6A0C9A; 
         margin: 10px 0; 
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow for separators */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
     .name-tag {
         text-align: center; 
@@ -21,71 +21,70 @@ st.markdown(
         background-color: #E6E6FA; 
         padding: 10px; 
         border-radius: 5px; 
-        width: 200px;  /* Resize the name tag */
-        margin: 10px auto;  /* Center the name tag with margin */
-        font-weight: bold;  /* Make the name tag bold */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow for name tag */
+        width: 200px;  
+        margin: 10px auto;  
+        font-weight: bold;  
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
     .description { 
         font-size: 18px; 
         text-align: center; 
-        margin: 0 auto; 
-        width: 80%; /* Set a width for the description to keep it in block format */
-        display: flex; /* Use flexbox for vertical centering */
-        align-items: center; /* Center vertically */
-        justify-content: center; /* Center horizontally */
-        height: 100%; /* Take full height of the column */
+        width: 80%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        height: 100%;
     }
     .footer { 
         text-align: center; 
         margin-top: 20px; 
         color: #6A0C9A; 
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Soft drop shadow for footer */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     }
     .profile-image { 
         display: block; 
         margin: 0 auto; 
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow for images */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        max-width: 100%; 
+        height: auto; 
     }  
     .margin-line {
-        border-left: 2px solid #6A0C9A; /* Make the left border thicker */
-        border-right: 2px solid #6A0C9A; /* Make the right border thicker */
-        padding: 0 20px; /* Add padding to create space between the lines and content */
-        margin: 0 auto; /* Center the margin lines */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow for margin lines */
+        border-left: 2px solid #6A0C9A; 
+        border-right: 2px solid #6A0C9A; 
+        padding: 0 20px; 
+        margin: 0 auto; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Page title and separator
+# Title and separator
 st.title("Daryl's Bibliography")
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Create a container for margin lines
+# Margin lines and content layout
 with st.container():
     st.markdown("<div class='margin-line'>", unsafe_allow_html=True)
 
-    # Create columns for description, name tag, and profile picture
-    col1, col2 = st.columns([2, 1])  # Adjust the ratio as needed
+    col1, col2 = st.columns([2, 1])  # Adjust column ratio
 
-    # Description in the first column
+    # Description
     with col1:
         st.markdown("<div class='description'>"
                     "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
                     "He graduated from DREESMNHS and lives in Surigao City. He dreams of building a network of autonomous computers. "
                     "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
-                    "</div>", unsafe_allow_html=True)  # Description
+                    "</div>", unsafe_allow_html=True)
 
-    # Profile section with centered layout in the second column
+    # Profile picture and name tag
     with col2:
-        profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/202411 21_151401.jpg"
-        st.image(profile_image_url, width=150, use_column_width=False)  # Set width to 150 pixels
-        st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)  # Name tag
+        profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/202411%2021_151401.jpg"
+        st.image(profile_image_url, width=150)
+        st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)
 
-    # Close the margin line container
-    st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)  # Close margin line
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -100,7 +99,7 @@ with st.container():
                 "Age": "18", "Education": "BSCpE", "University": "SNSU",
                 "High School": "DREESMNHS", "Location": "Surigao City, Philippines",
                 "Phone": "097 04978603", "Email": "daryl.sagranada.6146@gmail.com",
-                "School Email": "dsagranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
+                "School Email": "dsagranada@ssct.edu.ph", " "Height": "168 cm", "Weight": "56 kg"
             }
             for key, value in details.items():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
