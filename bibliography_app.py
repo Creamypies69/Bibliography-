@@ -74,7 +74,7 @@ with st.container():
     with col1:
         st.markdown("<div class='description'>"
                     "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
-                    "He graduated from DREESMNHS and lives in Surigao City. He dreams of building a network of autonomous computers. "
+                    "He graduated from DREESMNHS and lives in Surigao City. Daryl dreams of building a network of autonomous computers. "
                     "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
                     "</div>", unsafe_allow_html=True)
 
@@ -99,7 +99,7 @@ with st.container():
                 "Age": "18", "Education": "BSCpE", "University": "SNSU",
                 "High School": "DREESMNHS", "Location": "Surigao City, Philippines",
                 "Phone": "097 04978603", "Email": "daryl.sagranada.6146@gmail.com",
-                "School Email": "dsagranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
+                "School Email": "dsag ranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
             }
             for key, value in details.items():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
