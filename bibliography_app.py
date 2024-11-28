@@ -4,11 +4,6 @@ import streamlit as st
 st.markdown(
     """
     <style>
-    .title { 
-        color: #6A0C9A; 
-        text-align: center; 
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    }
     .separator { 
         border: none; 
         height: 2px; 
@@ -29,11 +24,6 @@ st.markdown(
         color: #6A0C9A; 
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     }
-    .profile-image { 
-        display: block; 
-        margin: 0 auto; 
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }  
     .navy-button {
         background-color: #001f3f;  /* Dark navy blue */
         color: white;
@@ -57,7 +47,7 @@ st.title("Daryl's Bibliography 📚")
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Centered profile picture
+# Profile picture
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
 st.markdown(f"<div style='text-align: center;'><img src='{profile_image_url}' width='300' alt='Daryl E. Sagranada' /></div>", unsafe_allow_html=True)
 
@@ -144,8 +134,6 @@ with st.expander("Related Images", expanded=False):
             with tabs[tab_names.index(tab_name)]:
                 for image_url in images[tab_name]:
                     st.image(image_url, use_column_width=True, caption=tab_name)
-        else:
-            st.error(f"Error: No images found for {tab_name}")
 
 # Separator below Related Images
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -161,5 +149,5 @@ with col1:
     if st.button("Refresh"):
         st.experimental_rerun()
 with col2:
-    if st.button("GitHub", key="github_button", help="Go to GitHub page", css_class="navy-button"):
+    if st.button("GitHub"):
         st.markdown("<script>window.open('https://g4sebr7wlknj2tu3kz9jpj.streamlit.app/', '_blank');</script>", unsafe_allow_html=True)
