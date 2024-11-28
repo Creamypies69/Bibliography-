@@ -57,7 +57,7 @@ with col1:
 # Profile section in the second column
 with col2:
     profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-    st.image(profile_image_url, width=150, caption="<strong>Daryl E. Sagranada</strong>")  # Bold caption
+    st.image(profile_image_url, width=150, caption="Daryl E. Sagranada")  # Normal caption without bold
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -94,11 +94,11 @@ with st.container():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
 # Separator
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
+st .markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in tabs
 st.subheader("Related Images")
-tab_names = ["SNSU", "KC ASPACIO", " DREESMNHS", "DARYL", "SURIGAO CITY"]
+tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
     "SNSU": [
         "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
