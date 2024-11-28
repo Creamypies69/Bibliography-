@@ -40,7 +40,7 @@ st.markdown(
 )
 
 # Page title
-st.title("Daryl's Bibliography")
+st.title("Daryl's Bibliography 📚")
 
 # Top separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -98,10 +98,10 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in an expander
 with st.expander("Related Images", expanded=False):  # Set to False to keep it closed on refresh
-    tab_names = ["SNSU ", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
+    tab_names = ["SNSU", "KC ASPACIO", " DREESMNHS", "DARYL", "SURIGAO CITY"]
     images = {
         "SNSU": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/173274572 7339.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
         ],
@@ -128,12 +128,17 @@ with st.expander("Related Images", expanded=False):  # Set to False to keep it c
     tabs = st.tabs(tab_names)
 
     for tab_name in tab_names:
-        with tabs[tab_names.index(tab_name)]:
-            for image_url in images[tab_name]:
-                st.image(image_url, use_column_width=True, caption=tab_name)
+        if tab_name in images:  # Check if tab_name exists in images dictionary
+            with tabs[tab_names.index(tab_name)]:
+                for image_url in images[tab_name]:
+                    st.image(image_url, use_column_width=True, caption=tab_name)
+        else:
+            st.error(f"Error: No images found for {tab_name}")
+# Additional functionality: Add a button to refresh images
+if st.button("Refresh Images"):
+    st.experimental_rerun()  # This will refresh the app and reload the images
 
-# Separator below the related images expander
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
-
-# Footer
-st.markdown("<div class='footer'>Bibliography project for submission to <strong>Programming Logic and Design</strong></div>", unsafe_allow_html=True)
+# Footer section
+st.markdown("<div class='footer'>"
+            "Bibliography Project by Daryl!"
+            "</div>", unsafe_allow_html=True)
