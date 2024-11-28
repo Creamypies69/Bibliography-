@@ -53,6 +53,15 @@ st.markdown(
     .stExpander[aria-expanded="true"] {
         background-color: rgba(106, 12, 154, 0.1); /* Change color when expanded */
     }
+    .hover-effect {
+        transition: background-color 0.3s ease;
+        padding: 5px; /* Add padding for a better hover effect */
+        border-radius: 5px; /* Rounded corners for the hover effect */
+    }
+    .hover-effect:hover {
+        background-color: rgba(106, 12, 154, 0.3); /* Hover color */
+        color: white; /* Change text color on hover */
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -94,73 +103,4 @@ with st.container():
                 "University": "SNSU",
                 "High School": "DREESMNHS", 
                 "Location": "Surigao City, Philippines",
-                "Phone": "097 04978603", 
-                "Email": "daryl.sagranada.6146@gmail.com",
-                "School Email": "dsagranada@ssct.edu.ph", 
-                "Height": "168 cm", 
-                "Weight": "56 kg"
-            }
-            for key, value in details.items():
-                st.markdown(f"<strong>{ key}:</strong> {value}", unsafe_allow_html=True)
-            st.markdown("</div>", unsafe_allow_html=True)
-
-    with col2:
-        with st.expander("Competencies", expanded=False):
-            st.markdown("<div class='card'>", unsafe_allow_html=True)
-            competencies = {
-                "Languages": "Python, Java, C++",
-                "Web Development": "HTML, CSS, JavaScript",
-                "Operating Systems": "Windows, Linux"
-            }
-            for key, value in competencies.items():
-                st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
-            st.markdown("</div>", unsafe_allow_html=True)
-
-# Separator
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
-
-# Related images
-with st.expander("Related Images", expanded=False):
-    tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
-    images = {
-        "SNSU": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
-        ],
-        "KC ASPACIO": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240601_131821_393.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240519_133040_233.jpg"
-        ],
-        "DREESMNHS": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745650378.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745687514.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745831902.jpg"
-        ],
-        "DARYL": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1700642274650.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20231226_140425_064.jpg"
-        ],
-        "SURIGAO CITY": [
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745851002.jpg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images.jpeg",
-            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images%20(1).jpeg"
-        ]
-    }
-
-    tabs = st.tabs(tab_names)
-
-    for tab_name in tab_names:
-        if tab_name in images:
-            with tabs[tab_names.index(tab_name)]:
-                st.markdown(f"<div class='tab-title'>{tab_name}</div>", unsafe_allow_html=True)
-                for image_url in images[tab_name]:
-                    st.image(image_url, use_column_width=True, caption=tab_name)
-
-# Separator below Related Images
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
-
-# Footer section
-st.markdown("<div class='footer'>"
-            "This is a project Bibliography by Daryl! To be submitted for <strong>Programming Logic and Design</strong>"
-            "</div>", unsafe_allow_html=True)
+                "Phone":
