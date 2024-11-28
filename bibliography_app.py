@@ -21,13 +21,13 @@ st.markdown(
         text-align: center; 
         margin: 0 auto; 
         width: 80%;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Soft drop shadow for text */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     }
     .footer { 
         text-align: center; 
         margin-top: 20px; 
         color: #6A0C9A; 
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Soft drop shadow for text */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     }
     .profile-image { 
         display: block; 
@@ -43,7 +43,7 @@ st.markdown(
 st.title("Daryl's Bibliography")
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Create columns for description and profile picture
+# Columns for description and profile picture
 col1, col2 = st.columns([2, 1])
 
 # Description in the first column
@@ -54,10 +54,10 @@ with col1:
                 "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
                 "</div>", unsafe_allow_html=True)
 
-# Profile section in the second column
+# Profile picture in the second column
 with col2:
     profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-    st.image(profile_image_url, width=150, caption="Daryl E. Sagranada")  # Normal caption without bold
+    st.image(profile_image_url, width=250, caption="Daryl E. Sagranada")  # Larger profile picture
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -94,7 +94,7 @@ with st.container():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
 # Separator
-st .markdown("<div class='separator'></div>", unsafe_allow_html=True)
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in tabs
 st.subheader("Related Images")
@@ -102,7 +102,7 @@ tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
     "SNSU": [
         "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
+        "https://raw .githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
         "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
     ],
     "KC ASPACIO": [
