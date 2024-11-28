@@ -39,10 +39,13 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Top separator
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
+
 # Page title
 st.title("Daryl's Bibliography")
 
-# Top separator
+# Another separator below the title
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Profile picture with separator above
@@ -94,14 +97,14 @@ with st.container():
                 "Operating Systems": "Windows, Linux"
             }
             for key, value in competencies.items():
-                st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+                st.markdown(f"<strong>{key}:</ strong> {value}", unsafe_allow_html=True)
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in an expander
 with st.expander("Related Images", expanded=True):
-    tab_names = ["SNSU", "KC ASPACIO", "DRE ESMNHS", "DARYL", "SURIGAO CITY"]
+    tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
     images = {
         "SNSU": [
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
