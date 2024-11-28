@@ -4,21 +4,48 @@ import streamlit as st
 st.markdown(
     """
     <style>
-    .title { color: #6A0C9A; text-align: center; }
-    .separator { border: 1px solid #6A0C9A; margin: 10px 0; }
+    .title { 
+        color: #6A0C9A; 
+        text-align: center; 
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Soft drop shadow for title */
+    }
+    .separator { 
+        border: none; 
+        height: 2px; 
+        background-color: #6A0C9A; 
+        margin: 10px 0; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow for separator */
+    }
     .name-tag {
-        text-align: center; font-size: 20px; color: black;  
-        background-color: #E6E6FA; padding: 10px; border-radius: 5px; width: 250px; margin: 0 auto;  
-        font-weight: bold;  /* Make the name tag bold */
+        text-align: center; 
+        font-size: 20px; 
+        color: black;  
+        background-color: #E6E6FA; 
+        padding: 10px; 
+        border-radius: 5px; 
+        width: 250px; 
+        margin: 0 auto;  
+        font-weight: bold;  
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow for name tag */
     }
     .description { 
         font-size: 18px; 
         text-align: center; 
         margin: 0 auto; 
         width: 80%; /* Set a width for the description to keep it in block format */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Soft drop shadow for description */
     }
-    .footer { text-align: center; margin-top: 20px; color: #6A0C9A; }
-    .profile-image { display: block; margin: 0 auto; }  
+    .footer { 
+        text-align: center; 
+        margin-top: 20px; 
+        color: #6A0C9A; 
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Soft drop shadow for footer */
+    }
+    .profile-image { 
+        display: block; 
+        margin: 0 auto; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft drop shadow for image */
+    }  
     </style>
     """,
     unsafe_allow_html=True
@@ -42,7 +69,7 @@ with col1:
 # Profile section with centered layout in the second column
 with col2:
     profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-    st.image(profile_image_url, width=150, use_column_width=False)  # Set width to 150 pixels
+    st.image(profile_image_url, width=150, use_column_width=False, caption="Daryl E. Sagranada", class_="profile-image")  # Set width to 150 pixels
     st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)  # Name tag
 
 # Separator
@@ -57,7 +84,7 @@ with st.container():
             details = {
                 "Age": "18", "Education": "BSCpE", "University": "SNSU",
                 "High School": "DREESMNHS", "Location": "Surigao City, Philippines",
-                "Phone": "097 04978603", "Email": "daryl.sagranada.6146@gmail.com",
+                "Phone": "097 04978603", "Email": "daryl.sagranada.6146@gmail .com",
                 "School Email": "dsagranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
             }
             for key, value in details.items():
@@ -82,7 +109,7 @@ tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
     "SNSU": [
         "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads /main/1732745734282.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
         "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
     ],
     "KC ASPACIO": [
@@ -110,7 +137,7 @@ tabs = st.tabs(tab_names)
 for tab_name in tab_names:
     with tabs[tab_names.index(tab_name)]:
         for image_url in images[tab_name]:
-            st.image(image_url, use_column_width=True)
+            st.image(image_url, use_column_width=True, caption=tab_name)
 
 # Footer
 st.markdown("<div class='footer'>Created by Daryl E. Sagranada</div>", unsafe_allow_html=True)
