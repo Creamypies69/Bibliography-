@@ -32,7 +32,6 @@ st.markdown(
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     }
     .profile-image {
-        border-radius: 50%;
         border: 5px solid #6A0C9A;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
@@ -66,7 +65,7 @@ st.title("Daryl's Bibliography 📚")
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Profile picture
-profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
+profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/20240304_132422.jpg"
 st.markdown(f"<div style='text-align: center;'><img src='{profile_image_url}' width='300' class='profile-image' alt='Daryl E. Sagranada' /></div>", unsafe_allow_html=True)
 
 # Separator
