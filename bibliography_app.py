@@ -21,6 +21,9 @@ st.markdown(
         margin: 0 auto; 
         width: 80%;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 20px;
     }
     .footer { 
         text-align: center; 
@@ -33,15 +36,22 @@ st.markdown(
         border: 5px solid #6A0C9A;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
-    .item-content {
+    .card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s;
-        padding: 10px;
-        border-radius: 5px;
-        background-color: #FFFFFF;
     }
-    .item-content:hover {
-        transform: scale(1.05);
-        background-color: #EDE7F6;
+    .card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .tab-title {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px 0;
     }
     </style>
     """,
@@ -55,7 +65,7 @@ st.title("Daryl's Bibliography 📚")
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Profile picture
-profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/20240304_132422.jpg"
+profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
 st.markdown(f"<div style='text-align: center;'><img src='{profile_image_url}' width='300' class='profile-image' alt='Daryl E. Sagranada' /></div>", unsafe_allow_html=True)
 
 # Separator
@@ -77,6 +87,7 @@ with st.container():
 
     with col1:
         with st.expander("Personal Details", expanded=False):
+            st.markdown("<div class='card'>", unsafe_allow_html=True)
             details = {
                 "Age": "18", 
                 "Education": "BSCpE", 
@@ -90,10 +101,12 @@ with st.container():
                 "Weight": "56 kg"
             }
             for key, value in details.items():
-                st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+                st .markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+            st.markdown("</div>", unsafe_allow_html=True)
 
     with col2:
         with st.expander("Competencies", expanded=False):
+            st.markdown("<div class='card'>", unsafe_allow_html=True)
             competencies = {
                 "Languages": "Python, Java, C++",
                 "Web Development": "HTML, CSS, JavaScript",
@@ -101,12 +114,13 @@ with st.container():
             }
             for key, value in competencies.items():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+            st.markdown("</div>", unsafe_allow_html=True)
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images
-with st.expander(" Related Images", expanded=False):
+with st.expander("Related Images", expanded=False):
     tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
     images = {
         "SNSU": [
@@ -139,6 +153,7 @@ with st.expander(" Related Images", expanded=False):
     for tab_name in tab_names:
         if tab_name in images:
             with tabs[tab_names.index(tab_name)]:
+                st.markdown(f"<div class='tab-title'>{tab_name}</div>", unsafe_allow_html=True)
                 for image_url in images[tab_name]:
                     st.image(image_url, use_column_width=True, caption=tab_name)
 
