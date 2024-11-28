@@ -101,7 +101,7 @@ with st.expander("Related Images", expanded=False):
     tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
     images = {
         "SNSU": [
-            "https://raw.githubusercontent.com/C reamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
         ],
