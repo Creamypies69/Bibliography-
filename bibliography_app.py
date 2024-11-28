@@ -69,7 +69,7 @@ with col1:
 # Profile section with centered layout in the second column
 with col2:
     profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-    st.image(profile_image_url, width=150, use_column_width=False, caption="Daryl E. Sagranada", class_="profile-image")  # Set width to 150 pixels
+    st.markdown(f"<img src='{profile_image_url}' width='150' class='profile-image' alt='Daryl E. Sagranada'/>", unsafe_allow_html=True)  # Set width to 150 pixels
     st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)  # Name tag
 
 # Separator
@@ -84,60 +84,23 @@ with st.container():
             details = {
                 "Age": "18", "Education": "BSCpE", "University": "SNSU",
                 "High School": "DREESMNHS", "Location": "Surigao City, Philippines",
-                "Phone": "097 04978603", "Email": "daryl.sagranada.6146@gmail .com",
-                "School Email": "dsagranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
+                "Phone": "097 049786 ```python
+    "Email": "darylsagranada@example.com"
             }
             for key, value in details.items():
-                st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
+                st.write(f"**{key}:** {value}")
 
     with col2:
         with st.expander("Competencies", expanded=True):
-            competencies = {
-                "Languages": "Python, Java, C++",
-                "Web Development": "HTML, CSS, JavaScript",
-                "Operating Systems": "Windows, Linux"
-            }
-            for key, value in competencies.items():
-                st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
-
-# Separator
-st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
-
-# Related images in tabs
-st.subheader("Related Images")
-tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
-images = {
-    "SNSU": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
-    ],
-    "KC ASPACIO": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240601_131821_393.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240519_133040_233.jpg"
-    ],
-    "DREESMNHS": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745650378.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745687514.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745831902.jpg"
-    ],
-    "DARYL": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1700642274650.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20231226_140425_064.jpg"
-    ],
-    "SURIGAO CITY": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745851002.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images.jpeg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images%20(1).jpeg"
-    ]
-}
-
-tabs = st.tabs(tab_names)
-
-for tab_name in tab_names:
-    with tabs[tab_names.index(tab_name)]:
-        for image_url in images[tab_name]:
-            st.image(image_url, use_column_width=True, caption=tab_name)
+            competencies = [
+                "Programming in Python, Java, and C++",
+                "Web Development (HTML, CSS, JavaScript)",
+                "Data Structures and Algorithms",
+                "Machine Learning Basics",
+                "Game Development"
+            ]
+            for competency in competencies:
+                st.write(f"- {competency}")
 
 # Footer
-st.markdown("<div class='footer'>Created by Daryl E. Sagranada</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Thank you for visiting my bibliography!</div>", unsafe_allow_html=True)
