@@ -31,6 +31,10 @@ st.markdown(
         text-align: center; 
         margin: 0 auto; 
         width: 80%; /* Set a width for the description to keep it in block format */
+        display: flex; /* Use flexbox for vertical centering */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        height: 100%; /* Take full height of the column */
     }
     .footer { 
         text-align: center; 
@@ -44,8 +48,8 @@ st.markdown(
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow for images */
     }  
     .margin-line {
-        border-left: 1px solid #6A0C9A; 
-        border-right: 1px solid #6A0C9A; 
+        border-left: 2px solid #6A0C9A; /* Make the left border thicker */
+        border-right: 2px solid #6A0C9A; /* Make the right border thicker */
         padding: 0 20px; /* Add padding to create space between the lines and content */
         margin: 0 auto; /* Center the margin lines */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow for margin lines */
@@ -76,7 +80,7 @@ with st.container():
 
     # Profile section with centered layout in the second column
     with col2:
-        profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
+        profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/202411 21_151401.jpg"
         st.image(profile_image_url, width=150, use_column_width=False)  # Set width to 150 pixels
         st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)  # Name tag
 
