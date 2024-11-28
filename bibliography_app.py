@@ -16,35 +16,18 @@ st.markdown(
         margin: 10px 0; 
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
-    .name-tag {
-        text-align: center; 
-        font-size: 20px; 
-        color: black;  
-        background-color: #E6E6FA; 
-        padding: 10px; 
-        border-radius: 5px; 
-        width: 150px;  /* Width matches profile picture */
-        margin: 10px auto;  /* Centering and spacing */
-        font-weight: bold;  
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow */
-        white-space: nowrap;  /* Prevent text from wrapping */
-        overflow: hidden;      /* Hide overflow if it exceeds the width */
-        text-overflow: ellipsis; /* Add ellipsis if text overflows */
-    }
     .description { 
         font-size: 18px; 
         text-align: center; 
         margin: 0 auto; 
         width: 80%;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Soft drop shadow for text */
     }
     .footer { 
         text-align: center; 
         margin-top: 20px; 
         color: #6A0C9A; 
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft drop shadow */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Soft drop shadow for text */
     }
     .profile-image { 
         display: block; 
@@ -74,8 +57,7 @@ with col1:
 # Profile section in the second column
 with col2:
     profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-    st.image(profile_image_url, width=150)  # Removed caption
-    st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)  # Full text displayed
+    st.image(profile_image_url, width=150, caption="<strong>Daryl E. Sagranada</strong>")  # Bold caption
 
 # Separator
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -90,7 +72,7 @@ with st.container():
                 "Age": "18", 
                 "Education": "BSCpE", 
                 "University": "SNSU",
-                "High School": "DREESMNHS ", 
+                "High School": "DREESMNHS", 
                 "Location": "Surigao City, Philippines",
                 "Phone": "097 04978603", 
                 "Email": "daryl.sagranada.6146@gmail.com",
@@ -115,7 +97,7 @@ with st.container():
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in tabs
-st.subheader("Related Images")
+ st.subheader("Related Images")
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
     "SNSU": [
