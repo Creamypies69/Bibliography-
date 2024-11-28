@@ -1,43 +1,39 @@
 import streamlit as st
-import random
 
-def random_rgb_color():
-    """Generate a random RGB color."""
-    return f"rgb({random.randint(0, 255)}, {random.randint(0, 255)}, {random.randint(0, 255)})"
-
-# Generate random colors for title and separators
-title_color = random_rgb_color()
-separator_color = random_rgb_color()
-
-# Custom CSS for styling with random colors
+# Custom CSS for styling
 st.markdown(
-    f"""
+    """
     <style>
-    .title {{ 
-        color: {title_color}; 
+    .title { 
+        color: #6A0C9A; 
         text-align: center; 
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    }}
-    .separator {{ 
+    }
+    .separator { 
         border: none; 
         height: 2px; 
-        background-color: {separator_color}; 
+        background-color: #6A0C9A; 
         margin: 10px 0; 
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }}
-    .description {{ 
+    }
+    .description { 
         font-size: 18px; 
         text-align: center; 
         margin: 0 auto; 
         width: 80%;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    }}
-    .footer {{ 
+    }
+    .footer { 
         text-align: center; 
         margin-top: 20px; 
-        color: {title_color}; 
+        color: #6A0C9A; 
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    }}
+    }
+    .profile-image { 
+        display: block; 
+        margin: 0 auto; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }  
     </style>
     """,
     unsafe_allow_html=True
@@ -54,7 +50,7 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Centered profile picture
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-st.image(profile_image_url, width=300, caption="Daryl E. Sagranada")
+st.image(profile_image_url, width=300, caption="Daryl E. Sagranada", use_column_width=True)
 
 # Separator below the profile picture
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -105,8 +101,8 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in an expander
 with st.expander("Related Images", expanded=True):
-    tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY "]
-    tab_images = [
+    tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
+ tab_images = [
         "https://example.com/snsu.jpg",
         "https://example.com/kc.jpg",
         "https://example.com/dreesmnhs.jpg",
