@@ -98,7 +98,7 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in an expander
 with st.expander("Related Images", expanded=False):  # Set to False to keep it closed on refresh
-    tab_names = ["SNSU", "KC ASPACIO", " DREESMNHS", "DARYL", "SURIGAO CITY"]
+    tab_names = ["SNSU", "KC ASPACIO", "DREESMN HS", "DARYL", "SURIGAO CITY"]
     images = {
         "SNSU": [
             "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
@@ -134,11 +134,8 @@ with st.expander("Related Images", expanded=False):  # Set to False to keep it c
                     st.image(image_url, use_column_width=True, caption=tab_name)
         else:
             st.error(f"Error: No images found for {tab_name}")
-# Additional functionality: Add a button to refresh images
-if st.button("Refresh Images"):
-    st.experimental_rerun()  # This will refresh the app and reload the images
 
 # Footer section
 st.markdown("<div class='footer'>"
-            "Bibliography Project by Daryl!"
+            "This is a project Bibliography by Daryl! To be submitted for <strong>Programming Logic and Design</strong>"
             "</div>", unsafe_allow_html=True)
