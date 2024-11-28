@@ -75,25 +75,27 @@ st.subheader("Related Images")
 tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
     "SNSU": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/snsu1.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/snsu2.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/snsu3.jpg"
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
     ],
     "KC ASPACIO": [
-        "https://raw.githubusercontent.com /Creamypies69/Bibliography-/refs/heads/main/kc_asapcio.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/kc2.jpg"
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/ heads/main/IMG_20240601_131821_393.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240519_133040_233.jpg"
     ],
     "DREESMNHS": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/dreesmnhs1.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/dreesmnhs2.jpg"
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745650378.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745687514.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745831902.jpg"
     ],
     "DARYL": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/daryl1.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/daryl2.jpg"
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1700642274650.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20231226_140425_064.jpg"
     ],
     "SURIGAO CITY": [
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/surigao1.jpg",
-        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/surigao2.jpg"
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745851002.jpg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images.jpeg",
+        "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images%20(1).jpeg"
     ]
 }
 
