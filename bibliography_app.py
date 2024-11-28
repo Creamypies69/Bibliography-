@@ -97,8 +97,8 @@ with st.container():
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in tabs
- st.subheader("Related Images")
-tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
+st.subheader("Related Images")
+tab_names = ["SNSU", "KC ASPACIO", " DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
     "SNSU": [
         "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
@@ -133,4 +133,4 @@ for tab_name in tab_names:
             st.image(image_url, use_column_width=True, caption=tab_name)
 
 # Footer
-st.markdown("<div class='footer'>Created by Daryl E. Sagranada</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Bibliography project for submission to <strong>Programming Logic and Design</strong></div>", unsafe_allow_html=True)
