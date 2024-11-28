@@ -4,6 +4,11 @@ import streamlit as st
 st.markdown(
     """
     <style>
+    .title { 
+        color: #6A0C9A; 
+        text-align: center; 
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
     .separator { 
         border: 1px solid #6A0C9A; 
         margin: 10px 0; 
@@ -21,12 +26,28 @@ st.markdown(
         font-weight: bold;  
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
+    .description { 
+        font-size: 18px; 
+        text-align: center; 
+        width: 80%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        height: 100%;
+    }
     .footer { 
         text-align: center; 
         margin-top: 20px; 
         color: #6A0C9A; 
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     }
+    .profile-image { 
+        display: block; 
+        margin: 0 auto; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        max-width: 100%; 
+        height: auto; 
+    }  
     .margin-line {
         border-left: 2px solid #6A0C9A; 
         border-right: 2px solid #6A0C9A; 
@@ -49,18 +70,19 @@ with st.container():
 
     col1, col2 = st.columns([2, 1])  # Adjust column ratio
 
+    # Description
+    with col1:
+        st.markdown("<div class='description'>"
+                    "<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
+                    "He graduated from DREESMNHS and lives in Surigao City. He dreams of building a network of autonomous computers. "
+                    "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
+                    "</div>", unsafe_allow_html=True)
+
     # Profile picture and name tag
     with col2:
         profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/202411%2021_151401.jpg"
         st.image(profile_image_url, width=150)
         st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)
-
-    # Description
-    with col1:
-        st.markdown("<strong>Daryl E. Sagranada</strong> is an 18-year-old college student pursuing a BSCpE at SNSU. "
-                    "He graduated from DREESMNHS and lives in Surigao City. Daryl dreams of building a network of autonomous computers. "
-                    "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
-                    )
 
     st.markdown("</div>", unsafe_allow_html=True)  # Close margin line
 
@@ -77,7 +99,7 @@ with st.container():
                 "Age": "18", "Education": "BSCpE", "University": "SNSU",
                 "High School": "DREESMNHS", "Location": "Surigao City, Philippines",
                 "Phone": "097 04978603", "Email": "daryl.sagranada.6146@gmail.com",
-                "School Email": "dsagranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
+                "School Email": "dsagranada@ssct.edu.ph", " "Height": "168 cm", "Weight": "56 kg"
             }
             for key, value in details.items():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
@@ -97,7 +119,7 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in tabs
 st.subheader("Related Images")
-tab_names = ["SNSU", "KC ASPACIO ", "DREESMNHS", "DARYL", "SURIGAO CITY"]
+tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
 images = {
     "SNSU": [
         "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
