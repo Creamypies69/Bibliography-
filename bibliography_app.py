@@ -23,7 +23,7 @@ st.markdown(
         background-color: #E6E6FA; 
         padding: 10px; 
         border-radius: 5px; 
-        width: 250px; 
+        width: 150px;  /* Adjusted width to match profile picture */
         margin: 0 auto;  
         font-weight: bold;  
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -69,7 +69,7 @@ with col1:
 # Profile section in the second column
 with col2:
     profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-    st.image(profile_image_url, width=150, caption="Daryl E. Sagranada")
+    st.image(profile_image_url, width=150)  # Removed caption
     st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)
 
 # Separator
@@ -89,7 +89,7 @@ with st.container():
                 "Location": "Surigao City, Philippines",
                 "Phone": "097 04978603", 
                 "Email": "daryl.sagranada.6146@gmail.com",  # Fixed the space
-                "School Email": " dsagranada@ssct.edu.ph", 
+                "School Email": "dsagranada@ssct.edu.ph", 
                 "Height": "168 cm", 
                 "Weight": "56 kg"
             }
@@ -97,7 +97,7 @@ with st.container():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
     with col2:
-        with st.expander("Competencies", expanded=True):
+        with st.expander("Competencies", expanded =True):
             competencies = {
                 "Languages": "Python, Java, C++",
                 "Web Development": "HTML, CSS, JavaScript",
