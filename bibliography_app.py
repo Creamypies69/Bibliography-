@@ -70,6 +70,12 @@ with st.container():
 
     col1, col2 = st.columns([2, 1])  # Adjust column ratio
 
+    # Profile picture and name tag
+    with col2:
+        profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/202411%2021_151401.jpg"
+        st.image(profile_image_url, width=150)
+        st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)
+
     # Description
     with col1:
         st.markdown("<div class='description'>"
@@ -77,12 +83,6 @@ with st.container():
                     "He graduated from DREESMNHS and lives in Surigao City. Daryl dreams of building a network of autonomous computers. "
                     "In his free time, he enjoys reading and gaming. He is in a loving relationship with his girlfriend, KC Aspacio."
                     "</div>", unsafe_allow_html=True)
-
-    # Profile picture and name tag
-    with col2:
-        profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/202411%2021_151401.jpg"
-        st.image(profile_image_url, width=150)
-        st.markdown("<div class='name-tag'>Daryl E. Sagranada</div>", unsafe_allow_html=True)
 
     st.markdown("</div>", unsafe_allow_html=True)  # Close margin line
 
@@ -98,8 +98,8 @@ with st.container():
             details = {
                 "Age": "18", "Education": "BSCpE", "University": "SNSU",
                 "High School": "DREESMNHS", "Location": "Surigao City, Philippines",
-                "Phone": "097 04978603", "Email": "daryl.sagranada.614 6@gmail.com",
-                "School Email": "dsag ranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
+                "Phone": "097 04978603 ", "Email": "daryl.sagranada.6146@gmail.com",
+                "School Email": "dsagranada@ssct.edu.ph", "Height": "168 cm", "Weight": "56 kg"
             }
             for key, value in details.items():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
