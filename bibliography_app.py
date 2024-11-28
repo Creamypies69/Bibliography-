@@ -126,10 +126,6 @@ with st.expander("Related Images", expanded=False):
 # Separator below Related Images
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# Refresh button positioned above the footer
-if st.button("Refresh"):
-    st.experimental_rerun()
-
 # Footer section
 st.markdown("<div class='footer'>"
             "This is a project Bibliography by Daryl! To be submitted for <strong>Programming Logic and Design</strong>"
