@@ -144,4 +144,4 @@ with st.expander("Related Images"):
 # Footer section
 st.markdown("<div class='footer'>"
             "This is a project Bibliography by Daryl! To be submitted for <strong>Programming Logic and Design</strong>"
-            "</div>", unsafe_allow
+            "</div>", unsafe_allow_html=True)
