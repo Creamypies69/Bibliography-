@@ -23,10 +23,13 @@ st.markdown(
         background-color: #E6E6FA; 
         padding: 10px; 
         border-radius: 5px; 
-        width: 150px;  /* Adjusted width to match profile picture */
+        width: 150px;  /* Width matches profile picture */
         margin: 0 auto;  
         font-weight: bold;  
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        white-space: nowrap;  /* Prevent text from wrapping to the next line */
+        overflow: hidden;      /* Hide overflow if it exceeds the width */
+        text-overflow: ellipsis; /* Add ellipsis if text overflows */
     }
     .description { 
         font-size: 18px; 
@@ -88,7 +91,7 @@ with st.container():
                 "High School": "DREESMNHS", 
                 "Location": "Surigao City, Philippines",
                 "Phone": "097 04978603", 
-                "Email": "daryl.sagranada.6146@gmail.com",  # Fixed the space
+                "Email": "daryl.sagranada.6146@gmail.com",
                 "School Email": "dsagranada@ssct.edu.ph", 
                 "Height": "168 cm", 
                 "Weight": "56 kg"
@@ -97,7 +100,7 @@ with st.container():
                 st.markdown(f"<strong>{key}:</strong> {value}", unsafe_allow_html=True)
 
     with col2:
-        with st.expander("Competencies", expanded =True):
+        with st.expander("Competencies", expanded=True):
             competencies = {
                 "Languages": "Python, Java, C++",
                 "Web Development": "HTML, CSS, JavaScript",
