@@ -50,7 +50,7 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Centered profile picture
 profile_image_url = "https://raw.githubusercontent.com/Creamypies69/Bibliography-/9c00f063fcdf27e3dc87b1793304ddacbe4f634c/20241121_151401.jpg"
-st.image(profile_image_url, width=300, caption="Daryl E. Sagranada", use_column_width=True)
+st.image(profile_image_url, width=300, caption="Daryl E. Sagranada")
 
 # Separator below the profile picture
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -101,19 +101,39 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # Related images in an expander
 with st.expander("Related Images", expanded=True):
-    tab_names = ["SNSU", "KC ASPACIO", "DREESMNHS", "DARYL", "SURIGAO CITY"]
- tab_images = [
-        "https://example.com/snsu.jpg",
-        "https://example.com/kc.jpg",
-        "https://example.com/dreesmnhs.jpg",
-        "https://example.com/daryl.jpg",
-        "https://example.com/surigao.jpg"
-    ]
+    tab_names = ["SNSU", "KC ASPACIO", "DRE ESMNHS", "DARYL", "SURIGAO CITY"]
+    images = {
+        "SNSU": [
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745727339.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745734282.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745788123.jpg"
+        ],
+        "KC ASPACIO": [
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240601_131821_393.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20240519_133040_233.jpg"
+        ],
+        "DREESMNHS": [
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745650378.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745687514.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745831902.jpg"
+        ],
+        "DARYL": [
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1700642274650.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/IMG_20231226_140425_064.jpg"
+        ],
+        "SURIGAO CITY": [
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/1732745851002.jpg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images.jpeg",
+            "https://raw.githubusercontent.com/Creamypies69/Bibliography-/refs/heads/main/images%20(1).jpeg"
+        ]
+    }
 
     tabs = st.tabs(tab_names)
-    for tab, image in zip(tabs, tab_images):
-        with tab:
-            st.image(image, caption=tab)
+
+    for tab_name in tab_names:
+        with tabs[tab_names.index(tab_name)]:
+            for image_url in images[tab_name]:
+                st.image(image_url, use_column_width=True, caption=tab_name)
 
 # Footer
-st.markdown("<div class='footer'>Thank you for visiting my bibliography!</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Bibliography project for submission to <strong>Programming Logic and Design</strong></div>", unsafe_allow_html=True)
